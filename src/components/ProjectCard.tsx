@@ -35,14 +35,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onProjectClick, onVi
 
   return (
     <div 
-      className="group relative bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-gray-100 cursor-pointer"
+      className="group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-3 hover:scale-105 overflow-hidden border border-gray-100 cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => onProjectClick(project.id)}
     >
       {/* Featured Badge */}
       {project.featured && (
-        <div className="absolute top-4 left-4 z-10 bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-3 py-1.5 rounded-full text-xs font-medium flex items-center space-x-1 shadow-lg">
+        <div className="absolute top-6 left-6 z-10 bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold flex items-center space-x-2 shadow-xl animate-pulse">
           <Star className="h-3 w-3" />
           <span>Featured</span>
         </div>
@@ -53,14 +53,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onProjectClick, onVi
         <img
           src={project.thumbnail}
           alt={project.title}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-125"
         />
         
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         
         {/* Hover Content */}
-        <div className={`absolute inset-0 flex items-center justify-center transition-all duration-300 ${
+        <div className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ${
           isHovered ? 'opacity-100' : 'opacity-0'
         }`}>
           <button 
@@ -68,94 +68,94 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onProjectClick, onVi
               e.stopPropagation();
               onProjectClick(project.id);
             }}
-            className="bg-white/90 backdrop-blur-sm text-gray-900 px-6 py-3 rounded-full font-medium flex items-center space-x-2 shadow-xl hover:bg-white transition-all duration-200 transform hover:scale-105"
+            className="bg-white/95 backdrop-blur-sm text-gray-900 px-8 py-4 rounded-2xl font-bold flex items-center space-x-3 shadow-2xl hover:bg-white transition-all duration-300 transform hover:scale-110 text-lg"
           >
             <span>View Project</span>
-            <ArrowRight className="h-4 w-4" />
+            <ArrowRight className="h-5 w-5" />
           </button>
         </div>
 
         {/* Stats Overlay */}
-        <div className={`absolute bottom-4 left-4 right-4 transition-all duration-300 ${
+        <div className={`absolute bottom-6 left-6 right-6 transition-all duration-500 ${
           isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
         }`}>
           <div className="flex items-center justify-between text-white">
-            <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-1">
+            <div className="flex items-center space-x-6">
+              <div className="flex items-center space-x-2 bg-black/30 backdrop-blur-sm px-3 py-1 rounded-full">
                 <Eye className="h-4 w-4" />
-                <span className="text-sm font-medium">{formatNumber(project.views)}</span>
+                <span className="text-sm font-bold">{formatNumber(project.views)}</span>
               </div>
               <button 
                 onClick={(e) => {
                   e.stopPropagation();
                   setIsLiked(!isLiked);
                 }}
-                className="flex items-center space-x-1 hover:scale-110 transition-transform"
+                className="flex items-center space-x-2 bg-black/30 backdrop-blur-sm px-3 py-1 rounded-full hover:scale-110 transition-transform"
               >
                 <Heart 
                   className={`h-4 w-4 transition-colors ${
                     isLiked ? 'fill-red-500 text-red-500' : 'text-white'
                   }`} 
                 />
-                <span className="text-sm font-medium">{formatNumber(project.likes + (isLiked ? 1 : 0))}</span>
+                <span className="text-sm font-bold">{formatNumber(project.likes + (isLiked ? 1 : 0))}</span>
               </button>
             </div>
-            <div className="flex items-center space-x-1 text-xs">
+            <div className="flex items-center space-x-1 text-xs bg-black/30 backdrop-blur-sm px-3 py-1 rounded-full">
               <Clock className="h-3 w-3" />
-              <span>{formatDate(project.date)}</span>
+              <span className="font-medium">{formatDate(project.date)}</span>
             </div>
           </div>
         </div>
       </div>
 
       {/* Project Info */}
-      <div className="p-6">
+      <div className="p-8">
         <div className="mb-3">
-          <span className="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full">
+          <span className="inline-block bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 text-sm font-bold px-4 py-2 rounded-full shadow-sm">
             {project.category}
           </span>
         </div>
         
-        <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-200 line-clamp-2">
+        <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text transition-all duration-300 line-clamp-2 leading-tight">
           {project.title}
         </h3>
         
-        <p className="text-gray-600 mb-4 line-clamp-2 leading-relaxed">
+        <p className="text-gray-600 mb-6 line-clamp-2 leading-relaxed text-lg">
           {project.description}
         </p>
 
         {/* Tools */}
-        <div className="flex flex-wrap gap-2 mb-4">
+        <div className="flex flex-wrap gap-3 mb-6">
           {project.tools.slice(0, 3).map((tool, index) => (
             <span
               key={index}
-              className="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-md hover:bg-blue-100 hover:text-blue-600 transition-colors"
+              className="bg-gray-100 text-gray-700 text-sm px-3 py-2 rounded-lg hover:bg-gradient-to-r hover:from-blue-100 hover:to-purple-100 hover:text-blue-700 transition-all duration-200 font-medium"
             >
               {tool}
             </span>
           ))}
           {project.tools.length > 3 && (
-            <span className="text-gray-500 text-xs px-2 py-1">
+            <span className="text-gray-500 text-sm px-3 py-2 font-medium">
               +{project.tools.length - 3} more
             </span>
           )}
         </div>
 
         {/* Mobile Stats */}
-        <div className="md:hidden flex items-center justify-between text-sm text-gray-600 pt-4 border-t border-gray-100">
+        <div className="md:hidden flex items-center justify-between text-sm text-gray-600 pt-6 border-t border-gray-200">
           <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-1">
+            <div className="flex items-center space-x-2 bg-gray-100 px-3 py-1 rounded-full">
               <Eye className="h-4 w-4" />
-              <span>{formatNumber(project.views)}</span>
+              <span className="font-medium">{formatNumber(project.views)}</span>
             </div>
-            <div className="flex items-center space-x-1">
+            <div className="flex items-center space-x-2 bg-gray-100 px-3 py-1 rounded-full">
               <Heart className="h-4 w-4" />
-              <span>{formatNumber(project.likes)}</span>
+              <span className="font-medium">{formatNumber(project.likes)}</span>
             </div>
           </div>
-          <div className="flex items-center space-x-1">
+          <div className="flex items-center space-x-1 bg-gray-100 px-3 py-1 rounded-full">
             <Clock className="h-3 w-3" />
-            <span>{formatDate(project.date)}</span>
+            <span className="font-medium">{formatDate(project.date)}</span>
           </div>
         </div>
       </div>

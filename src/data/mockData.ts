@@ -70,7 +70,7 @@ export const mockProjects: Project[] = [
     'problem': 'Doctors needed a desktop solution to efficiently manage patient consultations, appointments, and medical records across multiple hospitals with a unified and intuitive interface.',
     'solution': 'Created a user-friendly UI with a detailed dashboard, AI-powered prescription system, easy appointment and queue management, and over 20 designed screens for seamless doctor workflows.',
     'process': 'Initiated with stakeholder interviews, designed wireframes using Figma, developed screens with Adobe tools, leveraged ChatGPT for content structuring, and ensured compatibility with real-world medical needs.',
-    'results': 'Improved doctor efficiency by 45%, reduced appointment scheduling time by 25%, and designed over 20 screens for the doctors' software application.'
+    'results': 'Improved doctor efficiency by 45%, reduced appointment scheduling time by 25%, and designed over 20 screens for the doctors software application.'
 },
   {
     'id': '4',
@@ -243,7 +243,7 @@ export const mockProjects: Project[] = [
   'solution': 'Developed an intuitive website UI with a homepage, UI/UX elements, expert team pages, and success principles, enhanced with vibrant designs to reflect innovation and reliability.',
   'process': 'Started with client vision alignment, created wireframes in Figma, designed visuals with Adobe tools, utilized ChatGPT for content clarity, and ensured a cohesive layout.',
   'results': 'Increased business inquiries by 20%, enhanced brand credibility, and created multiple pages for the DJS Tech platform.'
-}
+},
 
   // Logo Designs
   {

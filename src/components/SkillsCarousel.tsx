@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 interface Skill {
   name: string;
@@ -20,14 +20,67 @@ const skills: Skill[] = [
 
 const SkillsCarousel: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [translateX, setTranslateX] = useState(0);
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  // Ensure infinite loop by duplicating skills
+  const extendedSkills = [...skills, ...skills, ...skills];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % skills.length);
-    }, 5000); // Change slide every 5 seconds (slower)
+      setCurrentIndex((prevIndex) => {
+        const newIndex = (prevIndex + 1) % skills.length;
+        // Reset to first set of skills when reaching the end for infinite effect
+        if (newIndex === 0) {
+          setTimeout(() => {
+            setTranslateX(0);
+            setCurrentIndex(0);
+          }, 1000); // Match transition duration
+        }
+        return newIndex;
+      });
+    }, 8000); // Slower timing: 8 seconds per slide
 
     return () => clearInterval(interval);
   }, []);
+
+  // Handle drag start
+  const handleDragStart = (e: React.MouseEvent | React.TouchEvent) => {
+    setIsDragging(true);
+    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+    setStartX(clientX);
+  };
+
+  // Handle drag move
+  const handleDragMove = (e: React.MouseEvent | React.TouchEvent) => {
+    if (!isDragging) return;
+    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+    const diffX = clientX - startX;
+    setTranslateX(-currentIndex * (100 / 6) + (diffX / window.innerWidth) * 100);
+  };
+
+  // Handle drag end
+  const handleDragEnd = () => {
+    if (!isDragging) return;
+    setIsDragging(false);
+    const threshold = 50; // Minimum drag distance to trigger slide
+    const diffX = translateX + currentIndex * (100 / 6);
+
+    if (Math.abs(diffX) > threshold) {
+      const direction = diffX > 0 ? -1 : 1;
+      let newIndex = (currentIndex + direction) % skills.length;
+      if (newIndex < 0) newIndex = skills.length - 1;
+      setCurrentIndex(newIndex);
+    }
+    setTranslateX(-currentIndex * (100 / 6));
+  };
+
+  // Handle dot click
+  const handleDotClick = (index: number) => {
+    setCurrentIndex(index);
+  };
 
   return (
     <div className="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
@@ -40,87 +93,31 @@ const SkillsCarousel: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Skills Carousel */}
-        <div className="relative overflow-hidden">
-          <div className="flex justify-center">
-            <div 
-              className="flex transition-transform duration-1000 ease-in-out"
-              style={{
-                transform: `translateX(-${currentIndex * 100}%)`,
-                width: `${skills.length * 100}%`
-              }}
-            >
-              {skills.map((skill, index) => (
-                <div
-                  key={skill.name}
-                  className="flex-shrink-0 px-4 flex justify-center"
-                  style={{ width: `${100 / skills.length}%` }}
-                >
-                  <div className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 border border-gray-100 group max-w-sm w-full">
-                    {/* Skill Icon */}
-                    <div className="text-center mb-6">
-                      <div className="w-20 h-20 mx-auto bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center text-3xl shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
-                        {skill.icon}
-                      </div>
-                    </div>
-
-                    {/* Skill Name */}
-                    <h3 className="text-2xl font-bold text-gray-900 text-center mb-6 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text transition-all duration-300">
-                      {skill.name}
-                    </h3>
-
-                    {/* Progress Bar */}
-                    <div className="mb-4">
-                      <div className="flex justify-between items-center mb-3">
-                        <span className="text-sm font-medium text-gray-600">Proficiency</span>
-                        <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                          {skill.percentage}%
-                        </span>
-                      </div>
-                      <div className="w-full bg-gray-200 rounded-full h-4 overflow-hidden shadow-inner">
-                        <div 
-                          className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 h-4 rounded-full transition-all duration-1000 shadow-lg relative overflow-hidden"
-                          style={{ width: `${skill.percentage}%` }}
-                        >
-                          {/* Animated shine effect */}
-                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-pulse"></div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Skill Level Badge */}
-                    <div className="text-center">
-                      <span className={`inline-block px-4 py-2 rounded-full text-sm font-bold ${
-                        skill.percentage >= 95 ? 'bg-gradient-to-r from-green-100 to-emerald-100 text-green-800' :
-                        skill.percentage >= 90 ? 'bg-gradient-to-r from-blue-100 to-cyan-100 text-blue-800' :
-                        skill.percentage >= 85 ? 'bg-gradient-to-r from-purple-100 to-violet-100 text-purple-800' :
-                        'bg-gradient-to-r from-orange-100 to-yellow-100 text-orange-800'
-                      }`}>
-                        {skill.percentage >= 95 ? 'Expert' :
-                         skill.percentage >= 90 ? 'Advanced' :
-                         skill.percentage >= 85 ? 'Proficient' : 'Intermediate'}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Alternative layout for better centering */}
-        <div className="relative overflow-hidden hidden">
+        <div 
+          className="relative overflow-hidden"
+          onMouseDown={handleDragStart}
+          onMouseMove={handleDragMove}
+          onMouseUp={handleDragEnd}
+          onMouseLeave={handleDragEnd}
+          onTouchStart={handleDragStart}
+          onTouchMove={handleDragMove}
+          onTouchEnd={handleDragEnd}
+        >
           <div 
-            className="flex transition-transform duration-1000 ease-in-out justify-center"
+            className="flex transition-transform duration-1000 ease-in-out"
             style={{
-              transform: `translateX(-${currentIndex * 320}px)`,
+              transform: `translateX(${translateX - currentIndex * (100 / 6)}%)`,
+              width: `${(extendedSkills.length * 100) / 6}%`,
             }}
+            ref={carouselRef}
           >
-            {skills.map((skill, index) => (
+            {extendedSkills.map((skill, index) => (
               <div
-                key={skill.name}
-                className="flex-shrink-0 px-4 w-80"
+                key={`${skill.name}-${index}`}
+                className="flex-shrink-0 px-4 flex justify-center"
+                style={{ width: `${100 / 6}%` }}
               >
-                <div className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 border border-gray-100 group">
+                <div className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 border border-gray-100 group max-w-sm w-full">
                   {/* Skill Icon */}
                   <div className="text-center mb-6">
                     <div className="w-20 h-20 mx-auto bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center text-3xl shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
@@ -176,11 +173,12 @@ const SkillsCarousel: React.FC = () => {
           {skills.map((_, index) => (
             <div
               key={index}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentIndex % skills.length
+              className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer ${
+                index === currentIndex
                   ? 'bg-gradient-to-r from-blue-600 to-purple-600 scale-125 shadow-lg'
                   : 'bg-gray-300 hover:bg-gray-400'
               }`}
+              onClick={() => handleDotClick(index)}
             />
           ))}
         </div>
@@ -212,4 +210,5 @@ const SkillsCarousel: React.FC = () => {
     </div>
   );
 };
+
 export default SkillsCarousel;

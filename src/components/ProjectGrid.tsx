@@ -18,16 +18,12 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({ projects, onProjectClick }) =
 
   // Extract unique categories from projects
   const allCategories = Array.from(new Set(projects.map(project => project.category)));
-  const filterOptions = ['all', ...allCategories];
+  
+  // Filter to show only "Big Projects" category on home page
+  const bigProjects = projects.filter(project => project.category === 'Big Projects');
 
   // Filter and sort projects
-  const filteredProjects = projects
-    .filter(project => {
-      const matchesCategory = filterCategory === 'all' || project.category === filterCategory;
-      const matchesSearch = project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           project.description.toLowerCase().includes(searchTerm.toLowerCase());
-      return matchesCategory && matchesSearch;
-    })
+  const filteredProjects = bigProjects
     .sort((a, b) => {
       switch (sortBy) {
         case 'popular':
@@ -41,19 +37,6 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({ projects, onProjectClick }) =
     });
 
   // Projects to display (limited by displayCount)
-  const displayedProjects = filteredProjects.slice(0, displayCount);
-  const hasMoreProjects = displayCount < filteredProjects.length;
-
-  const handleShowAll = () => {
-    // This will be handled by the parent component to navigate to projects page
-  };
-
-  // Reset display count when filters change
-  React.useEffect(() => {
-    setDisplayCount(6); // Show only 6 projects initially
-  }, [filterCategory, searchTerm, sortBy]);
-
-  // Show only 6 projects initially on home page
   const homePageProjects = filteredProjects.slice(0, 6);
 
   return (

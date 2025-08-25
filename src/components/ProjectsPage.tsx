@@ -109,9 +109,9 @@ const ProjectsPage: React.FC<ProjectsPageProps> = ({ onProjectClick }) => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="flex flex-col lg:flex-row gap-8">
+        <div className="flex flex-col xl:flex-row gap-8">
           {/* Sidebar Filter */}
-          <div className="lg:w-64 flex-shrink-0">
+          <div className="xl:w-72 flex-shrink-0">
             <div className="bg-white rounded-2xl shadow-lg p-8 sticky top-24 border border-gray-100">
               <div className="flex items-center space-x-2 mb-6">
                 <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
@@ -186,7 +186,7 @@ const ProjectsPage: React.FC<ProjectsPageProps> = ({ onProjectClick }) => {
           {/* Main Content */}
           <div className="flex-1">
             {/* Header */}
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-8">
               <div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-3">
                   {filterCategory === 'all' ? 'All Projects' : filterCategory}
@@ -197,7 +197,7 @@ const ProjectsPage: React.FC<ProjectsPageProps> = ({ onProjectClick }) => {
               </div>
 
               {/* View Mode Toggle */}
-              <div className="flex border border-gray-300 rounded-xl overflow-hidden mt-4 sm:mt-0 shadow-sm">
+              <div className="flex border border-gray-300 rounded-xl overflow-hidden mt-4 lg:mt-0 shadow-sm">
                 <button
                   onClick={() => setViewMode('grid')}
                   className={`p-4 transition-all duration-200 ${
@@ -224,7 +224,7 @@ const ProjectsPage: React.FC<ProjectsPageProps> = ({ onProjectClick }) => {
             {/* Projects Grid */}
             <div className={`grid gap-8 ${
               viewMode === 'grid' 
-                ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3' 
+                ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5' 
                 : 'grid-cols-1'
             }`}>
               {filteredProjects.map((project) => (

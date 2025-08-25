@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Eye, Heart, Clock, Star, ArrowRight, Play } from 'lucide-react';
+import { Eye, Heart, Clock, Star, ArrowRight, Play, Wrench } from 'lucide-react';
 import { Project } from '../types';
 
 interface ProjectCardProps {
@@ -110,35 +110,43 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onProjectClick, onVi
 
       {/* Project Info */}
       <div className="p-8">
-        <div className="mb-3">
-          <span className="inline-block bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 text-sm font-bold px-4 py-2 rounded-full shadow-sm">
-            {project.category}
-          </span>
-        </div>
-        
         <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text transition-all duration-300 line-clamp-2 leading-tight">
           {project.title}
         </h3>
-        
-        <p className="text-gray-600 mb-6 line-clamp-2 leading-relaxed text-lg">
-          {project.description}
-        </p>
+      </div>
 
-        {/* Tools */}
-        <div className="flex flex-wrap gap-3 mb-6">
-          {project.tools.slice(0, 3).map((tool, index) => (
-            <span
-              key={index}
-              className="bg-gray-100 text-gray-700 text-sm px-3 py-2 rounded-lg hover:bg-gradient-to-r hover:from-blue-100 hover:to-purple-100 hover:text-blue-700 transition-all duration-200 font-medium"
-            >
-              {tool}
-            </span>
-          ))}
-          {project.tools.length > 3 && (
-            <span className="text-gray-500 text-sm px-3 py-2 font-medium">
-              +{project.tools.length - 3} more
-            </span>
-          )}
+      {/* Category and Tools */}
+      <div className="px-8 pb-8">
+        <div className="flex items-center justify-between">
+          <span className="inline-block bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 text-sm font-bold px-4 py-2 rounded-full shadow-sm">
+            {project.category}
+          </span>
+          
+          {/* Tools Icon with Hover */}
+          <div className="relative group">
+            <div className="flex items-center space-x-2 bg-gray-100 hover:bg-gradient-to-r hover:from-blue-100 hover:to-purple-100 px-3 py-2 rounded-full transition-all duration-200 cursor-pointer">
+              <Wrench className="h-4 w-4 text-gray-600 group-hover:text-blue-600" />
+              <span className="text-sm font-medium text-gray-600 group-hover:text-blue-600">Tools</span>
+            </div>
+            
+            {/* Tools Tooltip */}
+            <div className="absolute bottom-full right-0 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+              <div className="bg-gray-900 text-white p-3 rounded-lg shadow-xl min-w-48">
+                <div className="flex flex-wrap gap-2">
+                  {project.tools.map((tool, index) => (
+                    <span
+                      key={index}
+                      className="bg-gray-800 text-gray-200 text-xs px-2 py-1 rounded font-medium"
+                    >
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+                {/* Arrow */}
+                <div className="absolute top-full right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Mobile Stats */}

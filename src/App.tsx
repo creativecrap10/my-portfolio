@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ProfileSection from './components/ProfileSection';
+import SkillsCarousel from './components/SkillsCarousel';
 import ProjectGrid from './components/ProjectGrid';
 import ProjectDetailModal from './components/ProjectDetailModal';
 import ProjectsPage from './components/ProjectsPage';
@@ -91,6 +92,7 @@ function App() {
         return (
           <>
             <ProfileSection user={mockUser} />
+            <SkillsCarousel />
             <ProjectGrid projects={mockProjects} onProjectClick={handleProjectClick} />
           </>
         );

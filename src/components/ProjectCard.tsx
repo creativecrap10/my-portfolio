@@ -110,7 +110,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onProjectClick, onVi
 
       {/* Project Info */}
       <div className="p-8">
-        <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text transition-all duration-300 line-clamp-2 leading-tight">
+        <h3 className="text-3xl font-bold text-gray-900 mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text transition-all duration-300 line-clamp-2 leading-tight">
           {project.title}
         </h3>
       </div>
@@ -123,14 +123,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onProjectClick, onVi
           </span>
           
           {/* Tools Icon with Hover */}
-          <div className="relative group">
-            <div className="flex items-center space-x-2 bg-gray-100 hover:bg-gradient-to-r hover:from-blue-100 hover:to-purple-100 px-3 py-2 rounded-full transition-all duration-200 cursor-pointer">
-              <Wrench className="h-4 w-4 text-gray-600 group-hover:text-blue-600" />
-              <span className="text-sm font-medium text-gray-600 group-hover:text-blue-600">Tools</span>
+          <div className="relative group/tools">
+            <div className="flex items-center justify-center bg-gray-100 hover:bg-gradient-to-r hover:from-blue-100 hover:to-purple-100 w-12 h-12 rounded-full transition-all duration-200 cursor-pointer shadow-lg hover:shadow-xl transform hover:scale-110">
+              <div className="text-2xl transform group-hover/tools:rotate-12 transition-transform duration-300">
+                🛠️
+              </div>
             </div>
             
             {/* Tools Tooltip */}
-            <div className="absolute bottom-full right-0 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+            <div className="absolute bottom-full right-0 mb-2 opacity-0 group-hover/tools:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
               <div className="bg-gray-900 text-white p-3 rounded-lg shadow-xl min-w-48">
                 <div className="flex flex-wrap gap-2">
                   {project.tools.map((tool, index) => (

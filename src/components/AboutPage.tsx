@@ -67,11 +67,11 @@ const AboutPage = () => {
             {/* Profile Image */}
             <div className="relative">
               <div className="relative z-10">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-600 rounded-2xl blur-2xl opacity-30 animate-pulse"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-600  blur-3xl opacity-30 animate-pulse"></div>
                 <img
                   src={mockUser.avatar}
                   alt={mockUser.name}
-                  className="relative w-full max-w-md mx-auto rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
+                  className="relative w-full max-w-md mx-auto rounded-2xl transform hover:scale-105 transition-transform duration-500"
                 />
               </div>
               {/* Decorative Elements */}

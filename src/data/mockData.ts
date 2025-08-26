@@ -4,7 +4,7 @@ export const mockUser: User = {
   id: '1',
   name: 'D. Jones Jebaraj',
   username: 'jonesjebaraj',
-  avatar: '/projects/profileperson.png',
+  avatar: '/images/profileperson.png',
   bio: 'With 5 years of experience in UI/UX and graphic design, I focus on delivering seamless user experiences and eye-catching visuals. I also contribute to digital marketing projects and create content that resonates with audiences.',
   location: 'Sivakasi, India',
   website: '',

@@ -29,7 +29,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate, setIsContactMo
               className="flex-shrink-0 hover:opacity-80 transition-opacity"
             >
               <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Tom Anderson
+                CREATIVE CRAP
               </h1>
             </button>
           </div>

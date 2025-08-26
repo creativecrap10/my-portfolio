@@ -48,7 +48,7 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({ user }) => {
             <div className="relative">
               <div className="w-48 h-48 lg:w-[500px] lg:h-auto  transform hover:scale-105 transition-transform duration-500">
                 <img
-                  src="/projects/profileperson.png"
+                  src="/images/profileperson.png"
                   alt={user.name}
                   className="w-full h-full object-cover object-center"
                 />

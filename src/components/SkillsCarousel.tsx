@@ -5,19 +5,19 @@ import "keen-slider/keen-slider.min.css";
 interface Skill {
   name: string;
   percentage: number;
-  icon: string;
+  image: string; // use image instead of icon
 }
 
 const skills: Skill[] = [
-  { name: "Figma", percentage: 98, icon: "🎨" },
-  { name: "Illustrator", percentage: 95, icon: "✏️" },
-  { name: "Photoshop", percentage: 92, icon: "🖼️" },
-  { name: "Adobe XD", percentage: 90, icon: "📱" },
-  { name: "Premiere Pro", percentage: 88, icon: "🎬" },
-  { name: "After Effects", percentage: 85, icon: "✨" },
-  { name: "ChatGPT", percentage: 97, icon: "🤖" },
-  { name: "Adobe Firefly", percentage: 90, icon: "🔥" },
-  { name: "React JS", percentage: 80, icon: "⚛️" },
+  { name: "Figma", percentage: 98, image: "/images/figma.png" },
+  { name: "Illustrator", percentage: 95, image: "/images/illustrator.png" },
+  { name: "Photoshop", percentage: 92, image: "/images/photoshop.png" },
+  { name: "Adobe XD", percentage: 90, image: "/images/xd.png" },
+  { name: "Premiere Pro", percentage: 88, image: "/images/premiere.png" },
+  { name: "After Effects", percentage: 85, image: "/images/aftereffects.png" },
+  { name: "ChatGPT", percentage: 97, image: "/images/chatgpt.png" },
+  { name: "Adobe Firefly", percentage: 90, image: "/images/firefly.png" },
+  { name: "React JS", percentage: 80, image: "/images/react.png" },
 ];
 
 const SkillsCarousel: React.FC = () => {
@@ -25,43 +25,41 @@ const SkillsCarousel: React.FC = () => {
 
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     loop: true,
-    mode: "free-snap",
     slides: {
-      perView: 6, // show 6 cards
-      spacing: 15, // small gap between cards
+      perView: 6,
+      spacing: 15,
     },
     slideChanged(slider) {
       setCurrentSlide(slider.track.details.rel);
     },
   });
 
-  // autoplay (slow)
+  // autoplay
   useEffect(() => {
     const interval = setInterval(() => {
       instanceRef.current?.next();
-    }, 4000); // 4s delay per slide (slower than your 2s/5s)
+    }, 4000);
     return () => clearInterval(interval);
   }, [instanceRef]);
 
   return (
-    <div className="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
+    <div className="py-20 bg-white relative overflow-hidden">
       {/* Carousel */}
       <div ref={sliderRef} className="keen-slider">
-        {skills.map((skill, index) => (
-          <div
-            key={skill.name}
-            className="keen-slider__slide flex justify-center"
-          >
-            <div className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 border border-gray-100 group w-full max-w-xs">
-              {/* Skill Icon */}
+        {skills.map((skill) => (
+          <div key={skill.name} className="keen-slider__slide flex justify-center">
+            <div className="rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 border border-gray-100 group w-full max-w-xs bg-white">
+              {/* Skill Image */}
               <div className="text-center mb-6">
-                <div className="w-20 h-20 mx-auto bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center text-3xl shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
-                  {skill.icon}
-                </div>
+                <img
+                  src={skill.image}
+                  alt={skill.name}
+                  className="w-20 h-20 mx-auto object-contain"
+                />
               </div>
 
               {/* Skill Name */}
-              <h3 className="text-2xl font-bold text-gray-900 text-center mb-6 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text transition-all duration-300">
+              <h3 className="text-xl font-bold text-gray-900 text-center mb-6">
                 {skill.name}
               </h3>
 
@@ -71,13 +69,13 @@ const SkillsCarousel: React.FC = () => {
                   <span className="text-sm font-medium text-gray-600">
                     Proficiency
                   </span>
-                  <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  <span className="text-2xl font-bold text-blue-600">
                     {skill.percentage}%
                   </span>
                 </div>
-                <div className="w-full bg-gray-200 rounded-full h-4 overflow-hidden shadow-inner">
+                <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden shadow-inner">
                   <div
-                    className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 h-4 rounded-full transition-all duration-1000 shadow-lg relative overflow-hidden"
+                    className="bg-blue-500 h-3 rounded-full transition-all duration-1000 relative overflow-hidden"
                     style={{ width: `${skill.percentage}%` }}
                   >
                     {/* Shine */}
@@ -89,14 +87,14 @@ const SkillsCarousel: React.FC = () => {
               {/* Badge */}
               <div className="text-center">
                 <span
-                  className={`inline-block px-4 py-2 rounded-full text-sm font-bold ${
+                  className={`inline-block px-4 py-1 rounded-full text-xs font-semibold ${
                     skill.percentage >= 95
-                      ? "bg-gradient-to-r from-green-100 to-emerald-100 text-green-800"
+                      ? "bg-green-100 text-green-800"
                       : skill.percentage >= 90
-                      ? "bg-gradient-to-r from-blue-100 to-cyan-100 text-blue-800"
+                      ? "bg-blue-100 text-blue-800"
                       : skill.percentage >= 85
-                      ? "bg-gradient-to-r from-purple-100 to-violet-100 text-purple-800"
-                      : "bg-gradient-to-r from-orange-100 to-yellow-100 text-orange-800"
+                      ? "bg-purple-100 text-purple-800"
+                      : "bg-yellow-100 text-yellow-800"
                   }`}
                 >
                   {skill.percentage >= 95
@@ -121,7 +119,7 @@ const SkillsCarousel: React.FC = () => {
             onClick={() => instanceRef.current?.moveToIdx(idx)}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
               idx === currentSlide
-                ? "bg-gradient-to-r from-blue-600 to-purple-600 scale-125 shadow-lg"
+                ? "bg-blue-600 scale-125 shadow-lg"
                 : "bg-gray-300 hover:bg-gray-400"
             }`}
           />

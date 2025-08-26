@@ -20,10 +20,10 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({ user }) => {
   };
 
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden min-h-screen lg:min-h-[80vh]">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat z-0 filter brightness-50"
+        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat z-0 filter brightness-50 bg-fixed"
         style={{
           backgroundImage: `url('https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop')`
         }}
@@ -41,16 +41,16 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({ user }) => {
       </div>
       
       {/* Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
-        <div className="relative z-20 flex flex-col lg:flex-row lg:items-center lg:space-x-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-20">
+        <div className="relative z-20 flex flex-col lg:flex-row lg:items-center lg:space-x-12 min-h-[60vh] lg:min-h-[70vh]">
           {/* Profile Image */}
           <div className="flex-shrink-0 mx-auto lg:mx-0 mb-8 lg:mb-0">
             <div className="relative">
-              <div className="w-48 h-48 lg:w-[500px] lg:h-auto  transform hover:scale-105 transition-transform duration-500">
+              <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-[400px] lg:h-[500px] transform hover:scale-105 transition-transform duration-500">
                 <img
                   src="/images/profileperson.png"
                   alt={user.name}
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover object-center rounded-2xl"
                 />
               </div>
               {/* Decorative Elements */}
@@ -62,7 +62,7 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({ user }) => {
           </div>
 
           {/* Profile Info */}
-          <div className="flex-1 text-center lg:text-left pb-16">
+          <div className="flex-1 text-center lg:text-left">
             <div className="mb-6">
               <div className="inline-block mb-6">
                 <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-full text-sm font-bold shadow-xl animate-pulse">
@@ -70,19 +70,19 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({ user }) => {
                 </span>
               </div>
               <div className="flex items-center justify-center lg:justify-start space-x-3 mb-3">
-                <h1 className="text-5xl lg:text-7xl font-bold text-white drop-shadow-2xl leading-tight">{user.name}</h1>
+                <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white drop-shadow-2xl leading-tight">{user.name}</h1>
                 {user.verified && (
                   <div className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-full p-2 shadow-xl animate-pulse">
                     <Check className="h-6 w-6 text-white" />
                   </div>
                 )}
               </div>
-              <p className="text-2xl lg:text-3xl text-gray-200 mb-6 drop-shadow-lg font-medium">UI/UX Designer & Visual Storyteller</p>
+              <p className="text-xl sm:text-2xl lg:text-3xl text-gray-200 mb-6 drop-shadow-lg font-medium">UI/UX Designer & Visual Storyteller</p>
             </div>
 
-            <p className="text-gray-100 text-xl lg:text-2xl mb-8 max-w-3xl leading-relaxed drop-shadow-lg">{user.bio}</p>
+            <p className="text-gray-100 text-lg sm:text-xl lg:text-2xl mb-8 max-w-3xl leading-relaxed drop-shadow-lg">{user.bio}</p>
 
-            <div className="flex flex-wrap justify-center lg:justify-start gap-6 mb-8 text-gray-200">
+            <div className="flex flex-wrap justify-center lg:justify-start gap-4 lg:gap-6 mb-8 text-gray-200">
               <div className="flex items-center space-x-2">
                 <div className="p-2 bg-white/20 backdrop-blur-sm rounded-lg">
                   <MapPin className="h-5 w-5 text-blue-400" />
@@ -100,23 +100,23 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({ user }) => {
             </div>
 
             {/* Stats */}
-            <div className="flex justify-center lg:justify-start space-x-16 mb-10">
+            <div className="flex justify-center lg:justify-start space-x-8 lg:space-x-16 mb-10">
               <div className="text-center">
-                <div className="text-4xl lg:text-5xl font-bold text-white mb-2 drop-shadow-2xl">{formatNumber(user.followers)}</div>
+                <div className="text-3xl lg:text-5xl font-bold text-white mb-2 drop-shadow-2xl">{formatNumber(user.followers)}</div>
                 <div className="flex items-center justify-center space-x-2 text-gray-200">
                   <Users className="h-4 w-4" />
                   <span className="text-sm font-medium">Followers</span>
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-4xl lg:text-5xl font-bold text-white mb-2 drop-shadow-2xl">{formatNumber(user.following)}</div>
+                <div className="text-3xl lg:text-5xl font-bold text-white mb-2 drop-shadow-2xl">{formatNumber(user.following)}</div>
                 <div className="flex items-center justify-center space-x-2 text-gray-200">
                   <UserPlus className="h-4 w-4" />
                   <span className="text-sm font-medium">Following</span>
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-4xl lg:text-5xl font-bold text-white mb-2 drop-shadow-2xl">{user.projects}</div>
+                <div className="text-3xl lg:text-5xl font-bold text-white mb-2 drop-shadow-2xl">{user.projects}</div>
                 <div className="flex items-center justify-center space-x-2 text-gray-200">
                   <FolderOpen className="h-4 w-4" />
                   <span className="text-sm font-medium">Projects</span>
@@ -125,7 +125,7 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({ user }) => {
             </div>
 
             {/* Social Links */}
-            <div className="flex justify-center lg:justify-start space-x-6 mb-10">
+            <div className="flex justify-center lg:justify-start space-x-4 lg:space-x-6 mb-10">
               <a href="#" className="p-4 bg-white/20 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:bg-white/30 hover:scale-110 group">
                 <Dribbble className="h-6 w-6 text-pink-400 group-hover:text-pink-300" />
               </a>
@@ -138,18 +138,22 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({ user }) => {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-4 lg:gap-6 justify-center lg:justify-start">
               <button 
                 onClick={() => setIsContactModalOpen(true)}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-10 py-5 rounded-2xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 hover:scale-105 group"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 lg:px-10 py-4 lg:py-5 rounded-2xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 font-bold text-base lg:text-lg shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 hover:scale-105 group"
               >
                 Visit Now
                 <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
               </button>
-              <button className="border-2 border-white/40 text-white px-10 py-5 rounded-2xl hover:border-blue-400 hover:bg-white/20 backdrop-blur-sm transition-all duration-300 font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-2 group">
+              <a 
+                href="/resume-jones.jebaraj.pdf" 
+                download="Tom_Anderson_Resume.pdf"
+                className="border-2 border-white/40 text-white px-8 lg:px-10 py-4 lg:py-5 rounded-2xl hover:border-blue-400 hover:bg-white/20 backdrop-blur-sm transition-all duration-300 font-bold text-base lg:text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-2 group flex items-center justify-center"
+              >
                 Download
                 <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform duration-300">↓</span>
-              </button>
+              </a>
             </div>
           </div>
         </div>

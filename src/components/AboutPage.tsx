@@ -51,27 +51,34 @@ const AboutPage = () => {
                 with functionality to deliver solutions that are both elegant and user-friendly.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 font-medium shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 hover:scale-105 flex items-center justify-center space-x-2 group">
+                <a 
+                  href="/resume-jones.jebaraj.pdf" 
+                  download="Tom_Anderson_Resume.pdf"
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 font-medium shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 hover:scale-105 flex items-center justify-center space-x-2 group"
+                >
                   <Download className="h-5 w-5" />
                   <span>Download CV</span>
                   <div className="w-0 group-hover:w-2 h-2 bg-white rounded-full transition-all duration-300"></div>
-                </button>
-                <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-xl hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 font-medium flex items-center justify-center space-x-2 group transform hover:-translate-y-1">
+                </a>
+                <a 
+                  href={`mailto:${mockUser.email}`}
+                  className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-xl hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 font-medium flex items-center justify-center space-x-2 group transform hover:-translate-y-1"
+                >
                   <Mail className="h-5 w-5" />
                   <span>Get In Touch</span>
                   <div className="w-0 group-hover:w-2 h-2 bg-blue-600 rounded-full transition-all duration-300"></div>
-                </button>
+                </a>
               </div>
             </div>
 
             {/* Profile Image */}
-            <div className="relative">
+            <div className="relative mt-8 lg:mt-0">
               <div className="relative z-10">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-600  blur-3xl opacity-30 animate-pulse"></div>
                 <img
                   src={mockUser.avatar}
                   alt={mockUser.name}
-                  className="relative w-full max-w-md mx-auto rounded-2xl transform hover:scale-105 transition-transform duration-500"
+                  className="relative w-full max-w-sm lg:max-w-md mx-auto rounded-2xl transform hover:scale-105 transition-transform duration-500"
                 />
               </div>
               {/* Decorative Elements */}
@@ -85,84 +92,120 @@ const AboutPage = () => {
       </div>
 
       {/* About Content */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {/* Main Content */}
-          <div className="lg:col-span-2">
-            <section className="mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">My Journey</h2>
-              <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-                <p>
-                  My design journey began during my college years when I discovered the power of 
-                  visual communication. What started as a hobby quickly became a passion, and I 
-                  found myself spending countless hours learning design principles, studying user 
-                  behavior, and experimenting with different tools.
-                </p>
-                <p>
-                  After graduating with a degree in Bsc.Visual Communication, I decided to pursue design 
-                  full-time. I started as a junior designer at a creative agency, where I learned 
-                  the fundamentals of branding, print design, and client communication. This 
-                  experience taught me the importance of understanding business goals and 
-                  translating them into effective visual solutions.
-                </p>
-                <p>
-                  As digital products became more prevalent, I naturally gravitated towards UI/UX 
-                  design. I was fascinated by the challenge of creating interfaces that were not 
-                  only beautiful but also intuitive and functional. This led me to specialize in 
-                  mobile app design and web interfaces, where I could combine my technical 
-                  background with my design skills.
-                </p>
-                <p>
-                  Today, I work with startups and established companies to create digital 
-                  experiences that users love. I believe that great design is invisible – it 
-                  should feel natural and effortless to the user while solving real problems 
-                  and achieving business objectives.
-                </p>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Journey Section */}
+        <div className="bg-white rounded-3xl shadow-xl p-8 lg:p-16 mb-16 relative overflow-hidden">
+          {/* Background decoration */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-blue-50 to-purple-50 rounded-full -translate-y-32 translate-x-32 opacity-50"></div>
+          <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-br from-purple-50 to-pink-50 rounded-full translate-y-24 -translate-x-24 opacity-50"></div>
+          
+          <div className="relative z-10">
+            <div className="text-center mb-12">
+              <div className="inline-block mb-4">
+                <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full text-sm font-medium shadow-lg">
+                  📖 My Story
+                </span>
               </div>
-            </section>
-          </div>
-
-          {/* Sidebar */}
-          <div className="space-y-8">
-            {/* Contact Info */}
-            <div className="bg-white p-6 rounded-xl shadow-sm">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Contact Info</h3>
-              <div className="space-y-3">
-                <div className="flex items-center space-x-3">
-                  <MapPin className="h-5 w-5 text-blue-600" />
-                  <span className="text-gray-700">{mockUser.location}</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Mail className="h-5 w-5 text-blue-600" />
-                  <a href={`mailto:${mockUser.email}`} className="text-blue-600 hover:text-blue-800 transition-colors">
-                    {mockUser.email}
-                  </a>
-                </div>
-              </div>
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">My Journey</h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mx-auto"></div>
             </div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+              {/* Main Content */}
+              <div className="lg:col-span-2">
+                <div className="space-y-8 text-lg text-gray-700 leading-relaxed">
+                  <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-2xl border-l-4 border-blue-500">
+                    <p>
+                      My design journey began during my college years when I discovered the power of 
+                      visual communication. What started as a hobby quickly became a passion, and I 
+                      found myself spending countless hours learning design principles, studying user 
+                      behavior, and experimenting with different tools.
+                    </p>
+                  </div>
+                  
+                  <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-8 rounded-2xl border-l-4 border-purple-500">
+                    <p>
+                      After graduating with a degree in Bsc.Visual Communication, I decided to pursue design 
+                      full-time. I started as a junior designer at a creative agency, where I learned 
+                      the fundamentals of branding, print design, and client communication. This 
+                      experience taught me the importance of understanding business goals and 
+                      translating them into effective visual solutions.
+                    </p>
+                  </div>
+                  
+                  <div className="bg-gradient-to-r from-green-50 to-blue-50 p-8 rounded-2xl border-l-4 border-green-500">
+                    <p>
+                      As digital products became more prevalent, I naturally gravitated towards UI/UX 
+                      design. I was fascinated by the challenge of creating interfaces that were not 
+                      only beautiful but also intuitive and functional. This led me to specialize in 
+                      mobile app design and web interfaces, where I could combine my technical 
+                      background with my design skills.
+                    </p>
+                  </div>
+                  
+                  <div className="bg-gradient-to-r from-yellow-50 to-orange-50 p-8 rounded-2xl border-l-4 border-yellow-500">
+                    <p>
+                      Today, I work with startups and established companies to create digital 
+                      experiences that users love. I believe that great design is invisible – it 
+                      should feel natural and effortless to the user while solving real problems 
+                      and achieving business objectives.
+                    </p>
+                  </div>
+                </div>
+              </div>
 
-            {/* Quick Stats */}
-            <div className="bg-white p-6 rounded-xl shadow-sm">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Quick Stats</h3>
-              <div className="space-y-4">
-                <div>
-                  <div className="text-2xl font-bold text-blue-600">3+</div>
-                  <div className="text-sm text-gray-600">Years Experience</div>
+              {/* Sidebar */}
+              <div className="space-y-8">
+                {/* Contact Info */}
+                <div className="bg-gradient-to-br from-white to-blue-50 p-8 rounded-2xl shadow-lg border border-blue-100 hover:shadow-xl transition-all duration-300">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                    Contact Info
+                  </h3>
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-4 p-3 bg-white rounded-xl shadow-sm">
+                      <div className="p-2 bg-blue-100 rounded-lg">
+                        <MapPin className="h-5 w-5 text-blue-600" />
+                      </div>
+                      <span className="text-gray-700 font-medium">{mockUser.location}</span>
+                    </div>
+                    <div className="flex items-center space-x-4 p-3 bg-white rounded-xl shadow-sm">
+                      <div className="p-2 bg-blue-100 rounded-lg">
+                        <Mail className="h-5 w-5 text-blue-600" />
+                      </div>
+                      <a href={`mailto:${mockUser.email}`} className="text-blue-600 hover:text-blue-800 transition-colors font-medium">
+                        {mockUser.email}
+                      </a>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <div className="text-2xl font-bold text-blue-600">50+</div>
-                  <div className="text-sm text-gray-600">Projects Completed</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-blue-600">25+</div>
-                  <div className="text-sm text-gray-600">Happy Clients</div>
+
+                {/* Quick Stats */}
+                <div className="bg-gradient-to-br from-white to-purple-50 p-8 rounded-2xl shadow-lg border border-purple-100 hover:shadow-xl transition-all duration-300">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                    <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                    Quick Stats
+                  </h3>
+                  <div className="space-y-6">
+                    <div className="text-center p-4 bg-white rounded-xl shadow-sm">
+                      <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">3+</div>
+                      <div className="text-sm text-gray-600 font-medium">Years Experience</div>
+                    </div>
+                    <div className="text-center p-4 bg-white rounded-xl shadow-sm">
+                      <div className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">50+</div>
+                      <div className="text-sm text-gray-600 font-medium">Projects Completed</div>
+                    </div>
+                    <div className="text-center p-4 bg-white rounded-xl shadow-sm">
+                      <div className="text-4xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-2">25+</div>
+                      <div className="text-sm text-gray-600 font-medium">Happy Clients</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
       {/* Skills Section */}
       <div className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -265,7 +308,9 @@ const AboutPage = () => {
             Ready to bring your ideas to life? I'd love to hear about your project.
           </p>
           <button className="bg-white text-blue-600 px-10 py-5 rounded-2xl hover:bg-gray-100 transition-all duration-300 font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 hover:scale-105 group">
-            Start a Project
+            <a href={`mailto:${mockUser.email}?subject=Project Inquiry`} className="flex items-center">
+              Start a Project
+            </a>
             <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
           </button>
           </div>

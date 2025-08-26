@@ -14,6 +14,14 @@ const ProjectsPage: React.FC<ProjectsPageProps> = ({ onProjectClick }) => {
   const [filterCategory, setFilterCategory] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
 
+  // Scroll to top when filters change
+  const scrollToTop = () => {
+    const projectsSection = document.getElementById('projects-section');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   const categories = [
     'all',
     'Big Projects',
@@ -139,7 +147,10 @@ const ProjectsPage: React.FC<ProjectsPageProps> = ({ onProjectClick }) => {
                   {categories.map(category => (
                     <button
                       key={category}
-                      onClick={() => setFilterCategory(category)}
+                      onClick={() => {
+                        setFilterCategory(category);
+                        scrollToTop();
+                      }}
                       className={`w-full text-left px-4 py-3 rounded-xl text-sm transition-all duration-300 flex items-center space-x-3 group ${
                         filterCategory === category
                           ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold shadow-lg'
@@ -184,7 +195,7 @@ const ProjectsPage: React.FC<ProjectsPageProps> = ({ onProjectClick }) => {
           </div>
 
           {/* Main Content */}
-          <div className="flex-1">
+          <div className="flex-1" id="projects-section">
             {/* Header */}
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-8">
               <div>

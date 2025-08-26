@@ -26,8 +26,19 @@ const SkillsCarousel: React.FC = () => {
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     loop: true,
     slides: {
-      perView: 6,
+      perView: "auto",
       spacing: 15,
+    },
+    breakpoints: {
+      "(max-width: 640px)": {
+        slides: { perView: 1.5, spacing: 10 },
+      },
+      "(max-width: 768px)": {
+        slides: { perView: 2.5, spacing: 12 },
+      },
+      "(max-width: 1024px)": {
+        slides: { perView: 4, spacing: 15 },
+      },
     },
     slideChanged(slider) {
       setCurrentSlide(slider.track.details.rel);
@@ -47,19 +58,19 @@ const SkillsCarousel: React.FC = () => {
       {/* Carousel */}
       <div ref={sliderRef} className="keen-slider">
         {skills.map((skill) => (
-          <div key={skill.name} className="keen-slider__slide flex justify-center">
-            <div className="rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 border border-gray-100 group w-full max-w-xs bg-white">
+          <div key={skill.name} className="keen-slider__slide" style={{ minWidth: '280px', maxWidth: '320px' }}>
+            <div className="rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 border border-gray-100 group w-full bg-white h-full">
               {/* Skill Image */}
               <div className="text-center mb-6">
                 <img
                   src={skill.image}
                   alt={skill.name}
-                  className="w-20 h-20 mx-auto object-contain"
+                  className="w-16 h-16 lg:w-20 lg:h-20 mx-auto object-contain"
                 />
               </div>
 
               {/* Skill Name */}
-              <h3 className="text-xl font-bold text-gray-900 text-center mb-6">
+              <h3 className="text-lg lg:text-xl font-bold text-gray-900 text-center mb-6">
                 {skill.name}
               </h3>
 

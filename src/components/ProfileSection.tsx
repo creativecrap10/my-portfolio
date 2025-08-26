@@ -41,12 +41,12 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({ user }) => {
       </div>
       
       {/* Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-20">
-        <div className="relative z-20 flex flex-col lg:flex-row lg:items-center lg:space-x-12 min-h-[60vh] lg:min-h-[70vh]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+        <div className="relative z-20 flex flex-col-reverse lg:flex-row lg:items-center lg:space-x-12 min-h-[60vh] lg:min-h-[70vh]">
           {/* Profile Image */}
-          <div className="flex-shrink-0 mx-auto lg:mx-0 mb-8 lg:mb-0">
+          <div className="flex-shrink-0 mx-auto lg:mx-0 lg:mb-0">
             <div className="relative">
-              <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-[400px] lg:h-[500px] transform hover:scale-105 transition-transform duration-500">
+              <div className="w-64 h-auto sm:w-80 sm:h-auto lg:w-[500px] lg:h-auto transform hover:scale-105 transition-transform duration-500">
                 <img
                   src="/images/profileperson.png"
                   alt={user.name}

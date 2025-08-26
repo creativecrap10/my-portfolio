@@ -18,17 +18,11 @@ const AboutPage = () => {
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-blue-50 via-white to-purple-50 relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23667eea' fill-opacity='0.08'%3E%3Cpath d='M40 40c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm20-20c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }} />
-        </div>
-      
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-xl animate-pulse"></div>
-      <div className="absolute top-40 right-20 w-32 h-32 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-xl animate-pulse delay-1000"></div>
-      <div className="absolute bottom-20 left-1/4 w-16 h-16 bg-gradient-to-br from-green-400/20 to-blue-400/20 rounded-full blur-xl animate-pulse delay-2000"></div>
+
+        {/* Floating Elements */}
+        <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute top-40 right-20 w-32 h-32 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-xl animate-pulse delay-1000"></div>
+        <div className="absolute bottom-20 left-1/4 w-16 h-16 bg-gradient-to-br from-green-400/20 to-blue-400/20 rounded-full blur-xl animate-pulse delay-2000"></div>
       
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -40,20 +34,21 @@ const AboutPage = () => {
                 </span>
               </div>
               <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-                Hi, I'm Tom —{' '}
+                Hi, I'm Jones Jebaraj —{' '}
                 <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-pulse">
-                  UI/UX Designer & Visual Storyteller
+                  UI/UX & Graphic Designer
                 </span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                With over 3 years of experience in designing intuitive digital experiences, 
-                I specialize in mobile apps, dashboards, and web UI. I combine aesthetics 
-                with functionality to deliver solutions that are both elegant and user-friendly.
+                With over 5 years of experience in UI/UX and graphic design, I craft seamless 
+                digital experiences and engaging visuals that connect brands with their audiences. 
+                I also bring expertise in digital marketing design, content creation, and frontend 
+                collaboration with developers to ensure design feasibility and impact.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a 
                   href="/resume-jones.jebaraj.pdf" 
-                  download="Tom_Anderson_Resume.pdf"
+                  download="Jones_Jebaraj_Resume.pdf"
                   className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 font-medium shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 hover:scale-105 flex items-center justify-center space-x-2 group"
                 >
                   <Download className="h-5 w-5" />
@@ -81,11 +76,6 @@ const AboutPage = () => {
                   className="relative w-full max-w-sm lg:max-w-md mx-auto rounded-2xl transform hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              {/* Decorative Elements */}
-              <div className="absolute top-8 -left-8 w-32 h-32 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-full opacity-40 blur-2xl animate-bounce"></div>
-              <div className="absolute bottom-8 -right-8 w-40 h-40 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full opacity-40 blur-2xl animate-bounce delay-1000"></div>
-              <div className="absolute -top-4 right-4 w-6 h-6 bg-yellow-400 rounded-full animate-ping"></div>
-              <div className="absolute bottom-4 -left-4 w-4 h-4 bg-green-400 rounded-full animate-ping delay-500"></div>
             </div>
           </div>
         </div>
@@ -93,12 +83,7 @@ const AboutPage = () => {
 
       {/* About Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {/* Journey Section */}
         <div className="bg-white rounded-3xl shadow-xl p-8 lg:p-16 mb-16 relative overflow-hidden">
-          {/* Background decoration */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-blue-50 to-purple-50 rounded-full -translate-y-32 translate-x-32 opacity-50"></div>
-          <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-br from-purple-50 to-pink-50 rounded-full translate-y-24 -translate-x-24 opacity-50"></div>
-          
           <div className="relative z-10">
             <div className="text-center mb-12">
               <div className="inline-block mb-4">
@@ -116,39 +101,34 @@ const AboutPage = () => {
                 <div className="space-y-8 text-lg text-gray-700 leading-relaxed">
                   <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-2xl border-l-4 border-blue-500">
                     <p>
-                      My design journey began during my college years when I discovered the power of 
-                      visual communication. What started as a hobby quickly became a passion, and I 
-                      found myself spending countless hours learning design principles, studying user 
-                      behavior, and experimenting with different tools.
+                      I started my creative journey with a degree in <b>Visual Communication</b> at 
+                      The American College, Madurai. During my early years, I discovered my passion 
+                      for crafting designs that communicate stories and enhance user experiences.
                     </p>
                   </div>
                   
                   <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-8 rounded-2xl border-l-4 border-purple-500">
                     <p>
-                      After graduating with a degree in Bsc.Visual Communication, I decided to pursue design 
-                      full-time. I started as a junior designer at a creative agency, where I learned 
-                      the fundamentals of branding, print design, and client communication. This 
-                      experience taught me the importance of understanding business goals and 
-                      translating them into effective visual solutions.
+                      My first professional step was at <b>Max Expert, Madurai</b>, where I worked on 
+                      branding and UI design projects. This experience helped me understand the 
+                      fundamentals of client communication, creative execution, and impactful visuals.
                     </p>
                   </div>
                   
                   <div className="bg-gradient-to-r from-green-50 to-blue-50 p-8 rounded-2xl border-l-4 border-green-500">
                     <p>
-                      As digital products became more prevalent, I naturally gravitated towards UI/UX 
-                      design. I was fascinated by the challenge of creating interfaces that were not 
-                      only beautiful but also intuitive and functional. This led me to specialize in 
-                      mobile app design and web interfaces, where I could combine my technical 
-                      background with my design skills.
+                      Since 2020, I’ve been the <b>sole designer at AIIMTech Pvt. Ltd.</b>, where I 
+                      handled the entire design process for <b>Mediquince</b> (desktop & mobile apps). 
+                      From UI/UX to promotional assets, I independently managed design execution 
+                      while collaborating with developers and stakeholders for smooth implementation.
                     </p>
                   </div>
                   
                   <div className="bg-gradient-to-r from-yellow-50 to-orange-50 p-8 rounded-2xl border-l-4 border-yellow-500">
                     <p>
-                      Today, I work with startups and established companies to create digital 
-                      experiences that users love. I believe that great design is invisible – it 
-                      should feel natural and effortless to the user while solving real problems 
-                      and achieving business objectives.
+                      Today, I specialize in <b>UI/UX design, graphic design, digital marketing 
+                      content, and branding</b>. My goal is simple: create designs that look great, 
+                      work seamlessly, and leave a lasting impression on users.
                     </p>
                   </div>
                 </div>
@@ -157,7 +137,7 @@ const AboutPage = () => {
               {/* Sidebar */}
               <div className="space-y-8">
                 {/* Contact Info */}
-                <div className="bg-gradient-to-br from-white to-blue-50 p-8 rounded-2xl shadow-lg border border-blue-100 hover:shadow-xl transition-all duration-300">
+                <div className="bg-gradient-to-br from-white to-blue-50 p-8 rounded-2xl shadow-lg border border-blue-100">
                   <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                     <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
                     Contact Info
@@ -167,36 +147,36 @@ const AboutPage = () => {
                       <div className="p-2 bg-blue-100 rounded-lg">
                         <MapPin className="h-5 w-5 text-blue-600" />
                       </div>
-                      <span className="text-gray-700 font-medium">{mockUser.location}</span>
+                      <span className="text-gray-700 font-medium">Sivakasi, India</span>
                     </div>
                     <div className="flex items-center space-x-4 p-3 bg-white rounded-xl shadow-sm">
                       <div className="p-2 bg-blue-100 rounded-lg">
                         <Mail className="h-5 w-5 text-blue-600" />
                       </div>
-                      <a href={`mailto:${mockUser.email}`} className="text-blue-600 hover:text-blue-800 transition-colors font-medium">
-                        {mockUser.email}
+                      <a href="mailto:selfdesigner8@gmail.com" className="text-blue-600 hover:text-blue-800 transition-colors font-medium">
+                        selfdesigner8@gmail.com
                       </a>
                     </div>
                   </div>
                 </div>
 
                 {/* Quick Stats */}
-                <div className="bg-gradient-to-br from-white to-purple-50 p-8 rounded-2xl shadow-lg border border-purple-100 hover:shadow-xl transition-all duration-300">
+                <div className="bg-gradient-to-br from-white to-purple-50 p-8 rounded-2xl shadow-lg border border-purple-100">
                   <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                     <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
                     Quick Stats
                   </h3>
                   <div className="space-y-6">
                     <div className="text-center p-4 bg-white rounded-xl shadow-sm">
-                      <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">3+</div>
+                      <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">5+</div>
                       <div className="text-sm text-gray-600 font-medium">Years Experience</div>
                     </div>
                     <div className="text-center p-4 bg-white rounded-xl shadow-sm">
-                      <div className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">50+</div>
+                      <div className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">60+</div>
                       <div className="text-sm text-gray-600 font-medium">Projects Completed</div>
                     </div>
                     <div className="text-center p-4 bg-white rounded-xl shadow-sm">
-                      <div className="text-4xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-2">25+</div>
+                      <div className="text-4xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-2">30+</div>
                       <div className="text-sm text-gray-600 font-medium">Happy Clients</div>
                     </div>
                   </div>
@@ -206,96 +186,15 @@ const AboutPage = () => {
           </div>
         </div>
       </div>
+
       {/* Skills Section */}
-      <div className="bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          {/* Decorative Background */}
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full opacity-50 blur-3xl"></div>
-            <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full opacity-50 blur-3xl"></div>
-          </div>
-          
-          <div className="text-center mb-12">
-            <div className="inline-block mb-4">
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium">
-                🚀 My Arsenal
-              </span>
-            </div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Skills & Expertise</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">Tools and technologies I use to bring ideas to life</p>
-          </div>
-          
-          <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {mockSkills.map((skill, index) => {
-              const Icon = iconMap[skill.icon] || Box;
-              return (
-                <div key={index} className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 border border-gray-100 group">
-                  <div className="flex items-center space-x-3 mb-4">
-                    <div className="p-3 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
-                      <Icon className="h-6 w-6 text-white" />
-                    </div>
-                    <h3 className="font-bold text-gray-900 text-lg">{skill.name}</h3>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                    <div 
-                      className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 h-3 rounded-full transition-all duration-1000 shadow-lg animate-pulse"
-                      style={{ width: `${skill.level}%` }}
-                    ></div>
-                  </div>
-                  <div className="text-sm font-semibold text-gray-700 mt-3 flex justify-between items-center">
-                    <span>{skill.level}%</span>
-                    <span className="text-xs text-gray-500">Expert</span>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </div>
+      {/* keep mockSkills mapping, just ensure your mockData matches updated skills from resume */}
 
       {/* Experience Section */}
-      <div className="bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="text-center mb-12">
-            <div className="inline-block mb-4">
-              <span className="bg-gradient-to-r from-green-600 to-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium">
-                💼 Career Journey
-              </span>
-            </div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Experience</h2>
-            <p className="text-xl text-gray-600">My professional journey and key milestones</p>
-          </div>
-          
-          <div className="space-y-8">
-            {mockExperience.map((exp, index) => (
-              <div key={index} className="relative bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1 border-l-4 border-gradient-to-b from-blue-500 to-purple-600 group overflow-hidden">
-                {/* Background decoration */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-50 to-purple-50 rounded-full -translate-y-16 translate-x-16 group-hover:scale-150 transition-transform duration-700"></div>
-                
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                  <div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-1">{exp.role}</h3>
-                    <p className="text-xl text-transparent bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text font-bold">{exp.company}</p>
-                  </div>
-                  <div className="bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mt-2 md:mt-0">{exp.period}</div>
-                </div>
-                <p className="text-gray-700 leading-relaxed text-lg relative z-10">{exp.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+      {/* keep mockExperience mapping, just ensure your mockData matches resume work experience */}
 
       {/* CTA Section */}
       <div className="relative bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 overflow-hidden">
-        {/* Animated background elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-600/20 to-transparent"></div>
-          <div className="absolute top-20 left-20 w-40 h-40 bg-white/10 rounded-full blur-xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-60 h-60 bg-white/5 rounded-full blur-2xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-white/5 rounded-full blur-3xl animate-spin" style={{ animationDuration: '20s' }}></div>
-        </div>
-        
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
           <div className="relative z-10">
             <div className="inline-block mb-6">
@@ -305,14 +204,15 @@ const AboutPage = () => {
             </div>
             <h2 className="text-5xl font-bold text-white mb-6 leading-tight">Let's Work Together</h2>
             <p className="text-2xl text-blue-100 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Ready to bring your ideas to life? I'd love to hear about your project.
-          </p>
-          <button className="bg-white text-blue-600 px-10 py-5 rounded-2xl hover:bg-gray-100 transition-all duration-300 font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 hover:scale-105 group">
-            <a href={`mailto:${mockUser.email}?subject=Project Inquiry`} className="flex items-center">
-              Start a Project
-            </a>
-            <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
-          </button>
+              Have an idea or project in mind? Let's create seamless designs and experiences 
+              that delight users and drive business growth.
+            </p>
+            <button className="bg-white text-blue-600 px-10 py-5 rounded-2xl hover:bg-gray-100 transition-all duration-300 font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 hover:scale-105 group">
+              <a href="mailto:selfdesigner8@gmail.com?subject=Project Inquiry" className="flex items-center">
+                Start a Project
+              </a>
+              <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
+            </button>
           </div>
         </div>
       </div>

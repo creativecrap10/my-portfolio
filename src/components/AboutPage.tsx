@@ -99,7 +99,7 @@ const AboutPage = () => {
                   behavior, and experimenting with different tools.
                 </p>
                 <p>
-                  After graduating with a degree in Computer Science, I decided to pursue design 
+                  After graduating with a degree in Bsc.Visual Communication, I decided to pursue design 
                   full-time. I started as a junior designer at a creative agency, where I learned 
                   the fundamentals of branding, print design, and client communication. This 
                   experience taught me the importance of understanding business goals and 

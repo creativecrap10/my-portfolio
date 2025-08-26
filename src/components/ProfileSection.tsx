@@ -148,7 +148,7 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({ user }) => {
               </button>
               <a 
                 href="/resume-jones.jebaraj.pdf" 
-                download="Tom_Anderson_Resume.pdf"
+                download="Jones-Jebaraj_Resume.pdf"
                 className="border-2 border-white/40 text-white px-8 lg:px-10 py-4 lg:py-5 rounded-2xl hover:border-blue-400 hover:bg-white/20 backdrop-blur-sm transition-all duration-300 font-bold text-base lg:text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-2 group flex items-center justify-center"
               >
                 Download

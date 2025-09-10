@@ -175,7 +175,7 @@ const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
         controls
         autoPlay
         muted
-        className="  h-[500px] object-cover rounded-lg"
+        className="  h-[500px]  rounded-lg"
         poster={project.thumbnail}
       >
         <source src={project.videoUrl} type="video/mp4" />

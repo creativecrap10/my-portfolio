@@ -5,19 +5,20 @@ export const mockUser: User = {
   name: 'D. Jones Jebaraj',
   username: 'jonesjebaraj',
   avatar: '/images/profileperson.png',
-  bio: 'With 5 years of experience in UI/UX and graphic design, I focus on delivering seamless user experiences and eye-catching visuals. I also contribute to digital marketing projects and create content that resonates with audiences.',
+  bio: 'With 5 years of experience in UI/UX and graphic design',
   location: 'Sivakasi, India',
-  website: '',
+  website: 'selfdesigner8@gmail.com',
   email: 'selfdesigner8@gmail.com',
   social: {
     linkedin: 'jones-jebaraj',
-    instagram: 'creativecrap_',
+    instagram: 'creativecrap_'
   },
-  followers: 12500,
-  following: 890,
-  projects: 47,
+  followers: '01',
+  following: '5+',
+  projects: '50+',
   verified: true
 };
+
 
 export const mockProjects: Project[] = [
   // Big Projects
@@ -829,7 +830,7 @@ BG3 has raised the bar for what players expect from RPGs. Other developers will 
 ## Design Lessons
 
 The game's UI is a masterclass in information hierarchy and accessibility. Complex systems are made approachable through excellent design.`,
-    author: 'Tom Anderson',
+    author: 'Jones Jebaraj',
     date: '2024-01-14',
     readTime: '5 min read',
     thumbnail: 'https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=800'

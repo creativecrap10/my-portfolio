@@ -40,13 +40,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onProjectClick, onVi
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => onProjectClick(project.id)}
     >
-      {/* Featured Badge */}
+      {/* Featured Badge 
       {project.featured && (
         <div className="absolute top-6 left-6 z-10 bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold flex items-center space-x-2 shadow-xl animate-pulse">
           <Star className="h-3 w-3" />
           <span>Featured</span>
         </div>
-      )}
+      )} */}
 
       {/* Project Image */}
       <div className="relative aspect-[4/3] overflow-hidden">
@@ -79,6 +79,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onProjectClick, onVi
         <div className={`absolute bottom-6 left-6 right-6 transition-all duration-500 ${
           isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
         }`}>
+          {/*
           <div className="flex items-center justify-between text-white">
             <div className="flex items-center space-x-6">
               <div className="flex items-center space-x-2 bg-black/30 backdrop-blur-sm px-3 py-1 rounded-full">
@@ -104,8 +105,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onProjectClick, onVi
               <Clock className="h-3 w-3" />
               <span className="font-medium">{formatDate(project.date)}</span>
             </div>
-          </div>
-        </div>
+          </div> */}
+        </div> 
       </div>
 
       {/* Project Info */}

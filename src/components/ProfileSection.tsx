@@ -102,17 +102,17 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({ user }) => {
             {/* Stats */}
             <div className="flex justify-center lg:justify-start space-x-8 lg:space-x-16 mb-10">
               <div className="text-center">
-                <div className="text-3xl lg:text-5xl font-bold text-white mb-2 drop-shadow-2xl">{formatNumber(user.followers)}</div>
+                <div className="text-3xl lg:text-5xl font-bold text-white mb-2 drop-shadow-2xl">{(user.followers)}</div>
                 <div className="flex items-center justify-center space-x-2 text-gray-200">
                   <Users className="h-4 w-4" />
-                  <span className="text-sm font-medium">Followers</span>
+                  <span className="text-sm font-medium">Worked Companies</span>
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-3xl lg:text-5xl font-bold text-white mb-2 drop-shadow-2xl">{formatNumber(user.following)}</div>
+                <div className="text-3xl lg:text-5xl font-bold text-white mb-2 drop-shadow-2xl">{(user.following)}</div>
                 <div className="flex items-center justify-center space-x-2 text-gray-200">
                   <UserPlus className="h-4 w-4" />
-                  <span className="text-sm font-medium">Following</span>
+                  <span className="text-sm font-medium">Experience Years</span>
                 </div>
               </div>
               <div className="text-center">

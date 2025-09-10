@@ -189,7 +189,7 @@ const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
         project.images.map((image, index) => (
           <div
             key={index}
-            className="w-full rounded-lg overflow-hidden shadow-lg bg-black"
+            className="w-full rounded-lg overflow-hidden shadow-lg bg-black px-[50px]"
           >
             <img
               src={image}

@@ -110,7 +110,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onProjectClick, onVi
 
       {/* Project Info */}
       <div className="p-4">
-        <h3 className="text-2xl lg:text-2xl font-bold text-gray-900 mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text transition-all duration-300 line-clamp-2 leading-tight">
+        <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text transition-all duration-300 line-clamp-2 leading-tight">
           {project.title}
         </h3>
       </div>
@@ -118,7 +118,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onProjectClick, onVi
       {/* Category and Tools */}
       <div className="px-8 pb-8">
         <div className="flex items-center justify-between">
-          <span className="inline-block bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 text-sm font-bold px-4 py-2 rounded-full shadow-sm">
+          <span className="inline-block bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">
             {project.category}
           </span>
           

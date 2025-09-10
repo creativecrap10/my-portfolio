@@ -165,43 +165,44 @@ const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
             </div>
           </div>
 
-          {/* Project Images */}
-          <div className="space-y-6 mb-8">
-            {project.category === 'Animation Videos' && project.videoUrl ? (
-              <div className="relative">
-                <video
-                  ref={videoRef}
-                  controls
-                  autoPlay
-                  muted
-                  className="w-full rounded-lg shadow-lg"
-                  poster={project.thumbnail}
-                >
-                  <source src={project.videoUrl} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            ) : (
-              <>
-                {project.images && project.images.length > 0 ? (
-                  project.images.map((image, index) => (
-                    <img
-                      key={index}
-                      src={image}
-                      alt={`${project.title} - Image ${index + 1}`}
-                      className="w-full rounded-lg object-cover shadow-lg"
-                    />
-                  ))
-                ) : (
-                  <img
-                    src={project.thumbnail}
-                    alt={project.title}
-                    className="w-full rounded-lg object-cover shadow-lg"
-                  />
-                )}
-              </>
-            )}
-          </div>
+{/* Project Images */}
+<div className="space-y-6 mb-8">
+  {project.category === 'Animation Videos' && project.videoUrl ? (
+    <div className="relative w-full max-h-[600px] overflow-hidden flex justify-center items-center bg-black rounded-lg shadow-lg">
+      <video
+        ref={videoRef}
+        controls
+        autoPlay
+        muted
+        className="w-full h-full max-h-[600px] object-contain rounded-lg"
+        poster={project.thumbnail}
+      >
+        <source src={project.videoUrl} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  ) : (
+    <>
+      {project.images && project.images.length > 0 ? (
+        project.images.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`${project.title} - Image ${index + 1}`}
+            className="w-full rounded-lg object-cover shadow-lg max-h-[600px]"
+          />
+        ))
+      ) : (
+        <img
+          src={project.thumbnail}
+          alt={project.title}
+          className="w-full rounded-lg object-cover shadow-lg max-h-[600px]"
+        />
+      )}
+    </>
+  )}
+</div>
+
 
           {/* Project Details */}
           <div className="space-y-6 mb-8">

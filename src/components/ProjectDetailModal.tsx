@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { X, Eye, Heart, Share2, ExternalLink, Calendar, Star, ArrowLeft, ArrowRight } from 'lucide-react';
 import { Project } from '../types';
 import { mockUser, mockProjects } from '../data/mockData';
@@ -16,6 +16,8 @@ const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
   onClose, 
   onProjectClick 
 }) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
   // Handle escape key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -32,6 +34,16 @@ const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
       document.body.style.overflow = 'unset';
     };
   }, [isOpen, onClose]);
+
+  // Handle video autoplay
+  useEffect(() => {
+    if (isOpen && project?.category === 'Animation Videos' && videoRef.current) {
+      videoRef.current.currentTime = 0; // Reset video to start
+      videoRef.current.play().catch((error) => {
+        console.error('Video autoplay failed:', error);
+      });
+    }
+  }, [isOpen, project]);
 
   if (!isOpen || !project) return null;
 
@@ -158,7 +170,10 @@ const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
             {project.category === 'Animation Videos' && project.videoUrl ? (
               <div className="relative">
                 <video
+                  ref={videoRef}
                   controls
+                  autoPlay
+                  muted
                   className="w-full rounded-lg shadow-lg"
                   poster={project.thumbnail}
                 >

@@ -1,24 +1,122 @@
 import React from 'react';
-import { MapPin, Mail, Download, Palette, Search, Zap, PenTool, Image, Play, Box } from 'lucide-react';
-import { mockUser, mockSkills, mockExperience } from '../data/mockData';
+import { MapPin, Mail, Download, Palette, Search, Zap, PenTool, Image, Play, Box, Code, Camera, Megaphone, FileText, Users } from 'lucide-react';
 
 const AboutPage = () => {
-  const iconMap: { [key: string]: any } = {
-    Palette,
-    Search,
-    Zap,
-    Figma: Box,
-    PenTool,
-    Image,
-    Play,
-    Box
+  const mockUser = {
+    name: "Jones Jebaraj",
+    email: "selfdesigner8@gmail.com",
+    avatar: "/images/profileperson.png"
+  };
+
+  const timelineData = [
+    {
+      year: "2020",
+      title: "Graphic Designer",
+      description: "My professional journey began as a Graphic Designer, where I had the opportunity to collaborate on diverse international projects. I specialized in developing creative and impactful logos, which helped me understand the importance of strong visual identity in shaping a brand's presence.",
+      skills: ["logos", "visual identity"],
+      color: "blue",
+      icon: Palette,
+      patch: "🎨 LOGO"
+    },
+    {
+      year: "2021", 
+      title: "UI/UX Design",
+      description: "I transitioned into the field of UI/UX Design, taking on a key role in designing user interfaces for the Mediquince software. I created intuitive and user-friendly screens for both patients and doctors, focusing on improving usability, accessibility, and the overall user journey.",
+      skills: ["UI/UX Design", "patients", "doctors", "usability", "accessibility"],
+      color: "purple",
+      icon: PenTool,
+      patch: "🖌️ UI/UX"
+    },
+    {
+      year: "2022",
+      title: "Motion Design & Video Editing", 
+      description: "I expanded my expertise into motion design and video editing, producing engaging animations and promotional videos for Mediquince. Using tools such as Adobe After Effects and Premiere Pro, I created dynamic marketing content that strengthened the product's brand presence and customer engagement.",
+      skills: ["motion design", "video editing", "Adobe After Effects", "Premiere Pro", "animations"],
+      color: "green",
+      icon: Play,
+      patch: "🎬 MOTION"
+    },
+    {
+      year: "2023",
+      title: "Frontend Development",
+      description: "I began exploring frontend development, learning technologies like HTML, CSS, and JavaScript. This knowledge allowed me to collaborate more effectively with developers, bridge the gap between design and implementation, and ensure that my designs translated seamlessly into functional products.",
+      skills: ["frontend development", "HTML", "CSS", "JavaScript"],
+      color: "yellow",
+      icon: Code,
+      patch: "💻 CODE"
+    },
+    {
+      year: "2024",
+      title: "Digital Marketing & Social Media",
+      description: "My role expanded into digital marketing and social media management, where I created visually appealing digital advertisements and managed company social media accounts. I developed innovative Instagram campaigns for the Mediquince product, driving brand visibility and building stronger engagement with audiences.",
+      skills: ["digital marketing", "social media management", "company social media accounts", "Instagram campaigns"],
+      color: "pink",
+      icon: Megaphone,
+      patch: "📱 SOCIAL"
+    },
+    {
+      year: "2025",
+      title: "Content Strategy & Flow Design",
+      description: "I further enhanced my career by contributing to content strategy and flow design for AIIMTech projects. This included writing effective content for landing pages and designing user flows for major initiatives, such as the Tomlinson School software. These projects challenged me to combine design thinking with storytelling to deliver impactful digital solutions.",
+      skills: ["content strategy", "flow design", "landing pages", "Tomlinson School software"],
+      color: "indigo",
+      icon: FileText,
+      patch: "📝 STRATEGY"
+    }
+  ];
+
+  const colorClasses = {
+    blue: {
+      bg: "from-blue-50 to-blue-100",
+      border: "border-blue-500",
+      patch: "bg-blue-500",
+      icon: "bg-blue-100 text-blue-600"
+    },
+    purple: {
+      bg: "from-purple-50 to-purple-100", 
+      border: "border-purple-500",
+      patch: "bg-purple-500",
+      icon: "bg-purple-100 text-purple-600"
+    },
+    green: {
+      bg: "from-green-50 to-green-100",
+      border: "border-green-500", 
+      patch: "bg-green-500",
+      icon: "bg-green-100 text-green-600"
+    },
+    yellow: {
+      bg: "from-yellow-50 to-orange-100",
+      border: "border-yellow-500",
+      patch: "bg-yellow-500", 
+      icon: "bg-yellow-100 text-yellow-600"
+    },
+    pink: {
+      bg: "from-pink-50 to-red-100",
+      border: "border-pink-500",
+      patch: "bg-pink-500",
+      icon: "bg-pink-100 text-pink-600"
+    },
+    indigo: {
+      bg: "from-indigo-50 to-blue-100",
+      border: "border-indigo-500", 
+      patch: "bg-indigo-500",
+      icon: "bg-indigo-100 text-indigo-600"
+    }
+  };
+
+  const highlightSkills = (text, skills) => {
+    let highlightedText = text;
+    skills.forEach(skill => {
+      const regex = new RegExp(`\\b${skill}\\b`, 'gi');
+      highlightedText = highlightedText.replace(regex, `<strong class="font-bold text-gray-900 bg-yellow-100 px-1 rounded">$&</strong>`);
+    });
+    return highlightedText;
   };
 
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-blue-50 via-white to-purple-50 relative overflow-hidden">
-
         {/* Floating Elements */}
         <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-xl animate-pulse"></div>
         <div className="absolute top-40 right-20 w-32 h-32 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-xl animate-pulse delay-1000"></div>
@@ -69,7 +167,7 @@ const AboutPage = () => {
             {/* Profile Image */}
             <div className="relative mt-8 lg:mt-0">
               <div className="relative z-10">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-600  blur-3xl opacity-30 animate-pulse"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-600 blur-3xl opacity-30 animate-pulse"></div>
                 <img
                   src={mockUser.avatar}
                   alt={mockUser.name}
@@ -96,40 +194,62 @@ const AboutPage = () => {
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-              {/* Main Content */}
+              {/* Enhanced Timeline */}
               <div className="lg:col-span-2">
-                <div className="space-y-8 text-lg text-gray-700 leading-relaxed">
-                  <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-2xl border-l-4 border-blue-500">
-                    <p>
-                      I started my creative journey with a degree in <b>Visual Communication</b> at 
-                      The American College, Madurai. During my early years, I discovered my passion 
-                      for crafting designs that communicate stories and enhance user experiences.
-                    </p>
-                  </div>
+                <div className="relative">
+                  {/* Timeline Line */}
+                  <div className="absolute left-6 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 via-purple-500 via-green-500 via-yellow-500 via-pink-500 to-indigo-500 rounded-full"></div>
                   
-                  <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-8 rounded-2xl border-l-4 border-purple-500">
-                    <p>
-                      My first professional step was at <b>Max Expert, Madurai</b>, where I worked on 
-                      branding and UI design projects. This experience helped me understand the 
-                      fundamentals of client communication, creative execution, and impactful visuals.
-                    </p>
-                  </div>
-                  
-                  <div className="bg-gradient-to-r from-green-50 to-blue-50 p-8 rounded-2xl border-l-4 border-green-500">
-                    <p>
-                      Since 2020, I’ve been the <b>sole designer at AIIMTech Pvt. Ltd.</b>, where I 
-                      handled the entire design process for <b>Mediquince</b> (desktop & mobile apps). 
-                      From UI/UX to promotional assets, I independently managed design execution 
-                      while collaborating with developers and stakeholders for smooth implementation.
-                    </p>
-                  </div>
-                  
-                  <div className="bg-gradient-to-r from-yellow-50 to-orange-50 p-8 rounded-2xl border-l-4 border-yellow-500">
-                    <p>
-                      Today, I specialize in <b>UI/UX design, graphic design, digital marketing 
-                      content, and branding</b>. My goal is simple: create designs that look great, 
-                      work seamlessly, and leave a lasting impression on users.
-                    </p>
+                  <div className="space-y-12">
+                    {timelineData.map((item, index) => {
+                      const IconComponent = item.icon;
+                      const colors = colorClasses[item.color];
+                      
+                      return (
+                        <div key={index} className="relative flex items-start">
+                          {/* Timeline Dot with Icon */}
+                          <div className="relative z-10 flex-shrink-0">
+                            <div className={`w-12 h-12 rounded-full ${colors.icon} border-4 border-white shadow-lg flex items-center justify-center transform hover:scale-110 transition-all duration-300`}>
+                              <IconComponent className="h-6 w-6" />
+                            </div>
+                            {/* Skill Patch */}
+                            <div className={`absolute -top-3 -right-8 ${colors.patch} text-white text-xs font-bold px-2 py-1 rounded-full shadow-lg transform rotate-12 hover:rotate-0 transition-transform duration-300`}>
+                              {item.patch}
+                            </div>
+                          </div>
+                          
+                          {/* Content Card */}
+                          <div className="ml-8 flex-1">
+                            <div className={`bg-gradient-to-r ${colors.bg} p-8 rounded-2xl ${colors.border} border-l-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1`}>
+                              <div className="flex items-center mb-4">
+                                <div className="bg-white px-4 py-2 rounded-full shadow-sm">
+                                  <span className="text-2xl font-bold text-gray-800">{item.year}</span>
+                                </div>
+                                <h3 className="text-2xl font-bold text-gray-900 ml-4">{item.title}</h3>
+                              </div>
+                              <div 
+                                className="text-lg text-gray-700 leading-relaxed"
+                                dangerouslySetInnerHTML={{ 
+                                  __html: highlightSkills(item.description, item.skills) 
+                                }}
+                              />
+                              
+                              {/* Skills Tags */}
+                              <div className="mt-6 flex flex-wrap gap-2">
+                                {item.skills.map((skill, skillIndex) => (
+                                  <span 
+                                    key={skillIndex}
+                                    className="bg-white/80 backdrop-blur-sm text-gray-800 px-3 py-1 rounded-full text-sm font-medium shadow-sm hover:shadow-md transition-all duration-200 transform hover:scale-105"
+                                  >
+                                    #{skill.replace(/\s+/g, '')}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
@@ -147,7 +267,7 @@ const AboutPage = () => {
                       <div className="p-2 bg-blue-100 rounded-lg">
                         <MapPin className="h-5 w-5 text-blue-600" />
                       </div>
-                      <span className="text-gray-700 font-medium">Sivakasi, India</span>
+                      <span className="text-gray-700 font-medium">Coimbatore, India</span>
                     </div>
                     <div className="flex items-center space-x-4 p-3 bg-white rounded-xl shadow-sm">
                       <div className="p-2 bg-blue-100 rounded-lg">
@@ -186,12 +306,6 @@ const AboutPage = () => {
           </div>
         </div>
       </div>
-
-      {/* Skills Section */}
-      {/* keep mockSkills mapping, just ensure your mockData matches updated skills from resume */}
-
-      {/* Experience Section */}
-      {/* keep mockExperience mapping, just ensure your mockData matches resume work experience */}
 
       {/* CTA Section */}
       <div className="relative bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 overflow-hidden">

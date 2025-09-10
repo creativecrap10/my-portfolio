@@ -110,16 +110,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onProjectClick, onVi
 
       {/* Project Info */}
       <div className="p-4">
-        <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text transition-all duration-300 line-clamp-2 leading-tight">
+        <h3 className="text-lg lg:text-l font-bold text-gray-900 mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text transition-all duration-300 line-clamp-2 leading-tight">
           {project.title}
         </h3>
       </div>
 
       {/* Category and Tools */}
-      <div className="px-8 pb-8">
+      <div className="pr-8 pl-4 pb-8">
         <div className="flex items-center justify-between">
           <span className="inline-block bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">
-            {project.category}
+            {project.category}  
           </span>
           
           {/* Tools Icon with Hover */}
@@ -152,16 +152,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onProjectClick, onVi
 
         {/* Mobile Stats */}
         <div className="md:hidden flex items-center justify-between text-sm text-gray-600 pt-6 border-t border-gray-200">
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2 bg-gray-100 px-3 py-1 rounded-full">
-              <Eye className="h-4 w-4" />
-              <span className="font-medium">{formatNumber(project.views)}</span>
-            </div>
-            <div className="flex items-center space-x-2 bg-gray-100 px-3 py-1 rounded-full">
-              <Heart className="h-4 w-4" />
-              <span className="font-medium">{formatNumber(project.likes)}</span>
-            </div>
-          </div>
+
           <div className="flex items-center space-x-1 bg-gray-100 px-3 py-1 rounded-full">
             <Clock className="h-3 w-3" />
             <span className="font-medium">{formatDate(project.date)}</span>

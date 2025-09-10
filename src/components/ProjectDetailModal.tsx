@@ -165,16 +165,17 @@ const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
             </div>
           </div>
 
-{/* Project Images */}
+{/* Project Media */}
 <div className="space-y-6 mb-8">
   {project.category === 'Animation Videos' && project.videoUrl ? (
-    <div className="relative w-full max-h-[600px] overflow-hidden flex justify-center items-center bg-black rounded-lg shadow-lg">
+    // Fixed height video player
+    <div className="relative w-full h-[500px] flex justify-center items-center bg-black rounded-lg shadow-lg overflow-hidden">
       <video
         ref={videoRef}
         controls
         autoPlay
         muted
-        className="w-full h-full max-h-[600px] object-contain rounded-lg"
+        className=" h-[500px] object-cover rounded-lg"
         poster={project.thumbnail}
       >
         <source src={project.videoUrl} type="video/mp4" />
@@ -182,26 +183,34 @@ const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
       </video>
     </div>
   ) : (
+    // Images with fixed height and cover (no contain)
     <>
       {project.images && project.images.length > 0 ? (
         project.images.map((image, index) => (
-          <img
+          <div
             key={index}
-            src={image}
-            alt={`${project.title} - Image ${index + 1}`}
-            className="w-full rounded-lg object-cover shadow-lg max-h-[600px]"
-          />
+            className="w-full rounded-lg overflow-hidden shadow-lg bg-black"
+          >
+            <img
+              src={image}
+              alt={`${project.title} - Image ${index + 1}`}
+              className="w-full h-full object-cover"
+            />
+          </div>
         ))
       ) : (
-        <img
-          src={project.thumbnail}
-          alt={project.title}
-          className="w-full rounded-lg object-cover shadow-lg max-h-[600px]"
-        />
+        <div className="w-full h-[500px] rounded-lg overflow-hidden shadow-lg bg-black">
+          <img
+            src={project.thumbnail}
+            alt={project.title}
+            className="w-full h-full object-cover"
+          />
+        </div>
       )}
     </>
   )}
 </div>
+
 
 
           {/* Project Details */}

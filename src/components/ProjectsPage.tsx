@@ -25,7 +25,7 @@ const ProjectsPage: React.FC<ProjectsPageProps> = ({ onProjectClick }) => {
   const categories = [
     'all',
     'Mobile Applications',
-    'Landing Pages',
+    'Website Designs',
     'Logo Designs',
     'Print Designs',
     'Animation Videos',
@@ -56,7 +56,7 @@ const ProjectsPage: React.FC<ProjectsPageProps> = ({ onProjectClick }) => {
   const getCategoryIcon = (category: string) => {
     const icons: { [key: string]: string } = {
       'Mobile Applications': '📱',
-      'Landing Pages': '🌐',
+      'Website Designs': '🌐',
       'Logo Designs': '🎨',
       'Print Designs': '📄',
       'Animation Videos': '🎬',

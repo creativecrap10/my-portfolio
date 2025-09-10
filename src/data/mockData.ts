@@ -96,7 +96,7 @@ export const mockProjects: Project[] = [
   {
   'id': '5',
   'title': 'Omni Mart Website Design',
-  'category': 'Landing Pages',
+  'category': 'Website Designs',
   'parentCategory': 'Big Projects',
   'description': 'Omni Mart is a website builder designed and developed specifically for businesses in the crackers industry, featuring a vibrant e-commerce platform with product catalogs, sales banners, gift boxes, weekly offers, newsletter subscriptions, brand showcases, and contact sections.',
   'tools': ['Figma', 'Adobe Illustrator', 'Adobe Photoshop'],
@@ -134,7 +134,7 @@ export const mockProjects: Project[] = [
   {
     'id': '7',
     'title': 'Aiimtech Advanced Unique Impressive Website Solutions',
-    'category': 'Landing Pages',
+    'category': 'Website Designs',
     'description': 'Aiimtech offers advanced, unique website solutions designed to enhance business efficiency with a focus on quality, creativity, and professional UI/UX elements, catering to mobile applications, fintech, and full-stack development.',
     'tools': ['Figma', 'Adobe Illustrator', 'Adobe Photoshop', 'ChatGPT'],
     'thumbnail': '/projects/aiimtech.png',
@@ -151,7 +151,7 @@ export const mockProjects: Project[] = [
   {
     'id': '8',
     'title': 'Impact RI Website Design',
-    'category': 'Landing Pages',
+    'category': 'Website Designs',
     'description': 'Impact RI is a website designed to build sustainable communities for Rhode Island\'s future, focusing on environmental justice, homelessness prevention, real estate education, and community engagement with a user-friendly interface.',
     'tools': ['Figma', 'Adobe Illustrator', 'Adobe Photoshop', 'ChatGPT'],
     'thumbnail': '/projects/iiri-landing-page.png',
@@ -168,7 +168,7 @@ export const mockProjects: Project[] = [
   {
     'id': '9',
     'title': 'Willson Flooring Domestic Website Design',
-    'category': 'Landing Pages',
+    'category': 'Website Designs',
     'description': 'Willson Flooring Domestic (WFS) is a website designed to showcase commercial flooring services, offering expert installation, showroom visits, and no-obligation home visits, with a focus on transforming spaces across locations like Birkenhead, Neston, and Wirral.',
     'tools': ['Figma', 'Adobe Illustrator', 'Adobe Photoshop', 'ChatGPT'],
     'thumbnail': '/projects/wfs-domestic-landing-page.png',
@@ -185,7 +185,7 @@ export const mockProjects: Project[] = [
   {
     'id': '10',
     'title': 'WFS Flooring Solutions Website',
-    'category': 'Landing Pages',
+    'category': 'Website Designs',
     'description': 'WFS Flooring Solutions Website offers a modern platform for commercial flooring services, highlighting expert installation, affordable options, and reliable support across locations like Birkenhead, with a focus on customer satisfaction.',
     'tools': ['Figma', 'Adobe Illustrator', 'Adobe Photoshop', 'ChatGPT'],
     'thumbnail': '/projects/wfs-landing-page.png',
@@ -202,7 +202,7 @@ export const mockProjects: Project[] = [
   {
     'id': '11',
     'title': 'VIP Media Services Website Design',
-    'category': 'Landing Pages',
+    'category': 'Website Designs',
     'description': 'VIP Media Services offers a dynamic website showcasing digital marketing, video editing, scripting, branding, and hosting services, designed to bring visions to life through a creative and user-friendly interface.',
     'tools': ['Figma', 'Adobe Illustrator', 'Adobe Photoshop', 'Play', 'Josefine Sans'],
     'thumbnail': '/projects/vip-service-media.png',
@@ -219,7 +219,7 @@ export const mockProjects: Project[] = [
   {
   'id': '12',
   'title': 'BAM Electric Website Design',
-  'category': 'Landing Pages',
+  'category': 'Website Designs',
   'description': 'BAM Electric is a website designed to showcase electrical and industrial services, focusing on powering industries with precision and innovation, offering construction excellence, automation systems, and maintenance solutions.',
   'tools': ['Figma', 'Adobe Illustrator', 'Adobe Photoshop', 'ChatGPT'],
   'thumbnail': '/projects/bam-electrics.png',
@@ -236,7 +236,7 @@ export const mockProjects: Project[] = [
 {
   'id': '13',
   'title': 'DJS Tech Website Design',
-  'category': 'Landing Pages',
+  'category': 'Website Designs',
   'description': 'DJS Tech is a website designed to empower businesses with comprehensive solutions, showcasing innovation, expertise, and success through a step-by-step process, client testimonials, and industry insights.',
   'tools': ['Figma', 'Adobe Illustrator', 'Adobe Photoshop', 'ChatGPT'],
   'thumbnail': '/projects/djs-technologies.png',
@@ -374,7 +374,7 @@ export const mockProjects: Project[] = [
   'likes': 110,
   'date': '2025-08-25',
   'featured': true,
-  'problem': 'Doctors needed an effective print brochure to showcase the mobile app’s features for consultation management, patient records, and lab requests to enhance awareness and adoption.',
+  'problem': 'Doctors needed an effective print brochure to showcase the mobile app's features for consultation management, patient records, and lab requests to enhance awareness and adoption.',
   'solution': 'Designed a compelling brochure layout with key app features, vibrant visuals, and clear call-to-action sections, optimized for print to attract and inform healthcare professionals.',
   'process': 'Started with client requirements, created layouts in Figma, designed graphics with Adobe tools, utilized ChatGPT for content clarity, and ensured a professional print-ready design.',
   'results': 'Increased app awareness by 30%, boosted professional interest, and produced a high-quality print brochure for the MediQuince Doctors app.'
@@ -391,7 +391,7 @@ export const mockProjects: Project[] = [
   'likes': 105,
   'date': '2025-08-25',
   'featured': true,
-  'problem': 'Patients needed an effective print brochure to learn about the mobile app’s features for consultation booking, digital prescriptions, and billing to encourage adoption and usage.',
+  'problem': 'Patients needed an effective print brochure to learn about the mobile app's features for consultation booking, digital prescriptions, and billing to encourage adoption and usage.',
   'solution': 'Designed an engaging brochure layout with app highlights, vibrant graphics, and easy-to-read sections, optimized for print to attract and inform patients effectively.',
   'process': 'Started with client input, created layouts in Figma, designed visuals with Adobe tools, utilized ChatGPT for content clarity, and ensured a professional print-ready design.',
   'results': 'Increased app adoption by 25%, enhanced patient engagement, and produced a high-quality print brochure for the MediQuince Patient app.'

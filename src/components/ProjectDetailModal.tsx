@@ -169,13 +169,13 @@ const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
 <div className="space-y-6 mb-8">
   {project.category === 'Animation Videos' && project.videoUrl ? (
     // Fixed height video player
-    <div className="relative w-full h-[500px] flex justify-center items-center bg-black rounded-lg shadow-lg overflow-hidden">
+    <div className="relative  h-[500px] flex justify-center items-center bg-black rounded-lg shadow-lg overflow-hidden">
       <video
         ref={videoRef}
         controls
         autoPlay
         muted
-        className=" h-[500px] object-cover rounded-lg"
+        className="  h-[500px] object-cover rounded-lg"
         poster={project.thumbnail}
       >
         <source src={project.videoUrl} type="video/mp4" />

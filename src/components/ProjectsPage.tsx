@@ -24,8 +24,8 @@ const ProjectsPage: React.FC<ProjectsPageProps> = ({ onProjectClick }) => {
 
   const categories = [
     'all',
-    'Big Projects',
-    'Website Designs',
+    'Mobile Applications',
+    'Landing Pages',
     'Logo Designs',
     'Print Designs',
     'Animation Videos',
@@ -40,6 +40,7 @@ const ProjectsPage: React.FC<ProjectsPageProps> = ({ onProjectClick }) => {
                            project.description.toLowerCase().includes(searchTerm.toLowerCase());
       return matchesCategory && matchesSearch;
     })
+    .sort((a, b) => parseInt(a.id) - parseInt(b.id))
     .sort((a, b) => {
       switch (sortBy) {
         case 'popular':
@@ -48,14 +49,14 @@ const ProjectsPage: React.FC<ProjectsPageProps> = ({ onProjectClick }) => {
           return b.views - a.views;
         case 'recent':
         default:
-          return new Date(b.date).getTime() - new Date(a.date).getTime();
+          return parseInt(a.id) - parseInt(b.id);
       }
     });
 
   const getCategoryIcon = (category: string) => {
     const icons: { [key: string]: string } = {
-      'Big Projects': '🚀',
-      'Website Designs': '🌐',
+      'Mobile Applications': '📱',
+      'Landing Pages': '🌐',
       'Logo Designs': '🎨',
       'Print Designs': '📄',
       'Animation Videos': '🎬',

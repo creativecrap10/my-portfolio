@@ -24,7 +24,8 @@ export const mockProjects: Project[] = [
   {
     'id': '1',
     'title': 'MediQuince Doctors Application UI Design',
-    'category': 'Big Projects',
+    'category': 'Mobile Applications',
+    'parentCategory': 'Big Projects',
     'description': 'The MediQuince Doctor Application offers a professional healthcare solution with a seamless patient record system, prescriptions, lab scans, and follow-ups, ensuring quick access to patient data while maintaining a modern, user-friendly UI.',
     'tools': ['Figma', 'Adobe Photoshop', 'Adobe Illustrator', 'ChatGPT', 'Adobe XD'],
     'thumbnail': '/projects/mediquince-doctors-application.png',
@@ -41,7 +42,8 @@ export const mockProjects: Project[] = [
   {
     'id': '2',
     'title': 'MediQuince Patient Application UI Design Challenge',
-    'category': 'Big Projects',
+    'category': 'Mobile Applications',
+    'parentCategory': 'Big Projects',
     'description': 'The MediQuince Patient Application is a healthcare solution designed to simplify patient consultations and hospital interactions. It connects multiple hospitals into a unified network, enabling patients to easily access consultations, digital prescriptions, lab scans, and billing, all through a patient-first design experience.',
     'tools': ['Figma', 'Adobe Photoshop', 'Adobe Illustrator', 'ChatGPT'],
     'thumbnail': '/projects/mediquince-patient-application.png',
@@ -58,7 +60,8 @@ export const mockProjects: Project[] = [
   {
     'id': '3',
     'title': 'MediQuince Doctors Software UI Design Work',
-    'category': 'Big Projects',
+    'category': 'Landing Pages',
+    'parentCategory': 'Big Projects',
     'description': 'MediQuince Doctor Application is a desktop platform designed for doctors across multiple hospitals to manage consultations and patient data. It streamlines daily workflows by offering a unified interface to handle appointments, digital prescriptions, medical history, and reports in one place with Windows and Mac support.',
     'tools': ['Figma', 'Adobe Photoshop', 'Adobe Illustrator', 'ChatGPT'],
     'thumbnail': '/projects/mediquince-doctor-software.png',
@@ -75,7 +78,8 @@ export const mockProjects: Project[] = [
   {
     'id': '4',
     'title': 'PayBill Mobile Application Design',
-    'category': 'Big Projects',
+    'category': 'Mobile Applications',
+    'parentCategory': 'Big Projects',
     'description': 'PayBill is a mobile-first billing application designed for small and medium business owners. It helps shop owners and wholesalers manage products, customers, and billing processes seamlessly, offering quick bill creation, instant sharing, and a smoother, more transparent operation.',
     'tools': ['Figma', 'Adobe Photoshop', 'Adobe Illustrator', 'Adobe XD'],
     'thumbnail': '/projects/paybill.png',
@@ -92,7 +96,8 @@ export const mockProjects: Project[] = [
   {
   'id': '5',
   'title': 'Omni Mart Website Design',
-  'category': 'Big Projects',
+  'category': 'Landing Pages',
+  'parentCategory': 'Big Projects',
   'description': 'Omni Mart is a website builder designed and developed specifically for businesses in the crackers industry, featuring a vibrant e-commerce platform with product catalogs, sales banners, gift boxes, weekly offers, newsletter subscriptions, brand showcases, and contact sections.',
   'tools': ['Figma', 'Adobe Illustrator', 'Adobe Photoshop'],
   'thumbnail': '/projects/crackers-builder.png',
@@ -109,7 +114,8 @@ export const mockProjects: Project[] = [
   {
     'id': '6',
     'title': 'MediQuince Social Media Promotion Design',
-    'category': 'Big Projects',
+    'category': 'Print Designs',
+    'parentCategory': 'Big Projects',
     'description': 'MediQuince Social Media Promotion Design features Instagram posts and banners to promote the Doctors and Patient applications, highlighting healthy content, outpatient booking, and provider features with vibrant visuals and engaging messages.',
     'tools': ['Figma', 'Adobe Illustrator', 'Adobe Photoshop'],
     'thumbnail': '/projects/mediquince-instagram-post.png',
@@ -128,7 +134,7 @@ export const mockProjects: Project[] = [
   {
     'id': '7',
     'title': 'Aiimtech Advanced Unique Impressive Website Solutions',
-    'category': 'Website Designs',
+    'category': 'Landing Pages',
     'description': 'Aiimtech offers advanced, unique website solutions designed to enhance business efficiency with a focus on quality, creativity, and professional UI/UX elements, catering to mobile applications, fintech, and full-stack development.',
     'tools': ['Figma', 'Adobe Illustrator', 'Adobe Photoshop', 'ChatGPT'],
     'thumbnail': '/projects/aiimtech.png',
@@ -145,7 +151,7 @@ export const mockProjects: Project[] = [
   {
     'id': '8',
     'title': 'Impact RI Website Design',
-    'category': 'Website Designs',
+    'category': 'Landing Pages',
     'description': 'Impact RI is a website designed to build sustainable communities for Rhode Island\'s future, focusing on environmental justice, homelessness prevention, real estate education, and community engagement with a user-friendly interface.',
     'tools': ['Figma', 'Adobe Illustrator', 'Adobe Photoshop', 'ChatGPT'],
     'thumbnail': '/projects/iiri-landing-page.png',
@@ -162,7 +168,7 @@ export const mockProjects: Project[] = [
   {
     'id': '9',
     'title': 'Willson Flooring Domestic Website Design',
-    'category': 'Website Designs',
+    'category': 'Landing Pages',
     'description': 'Willson Flooring Domestic (WFS) is a website designed to showcase commercial flooring services, offering expert installation, showroom visits, and no-obligation home visits, with a focus on transforming spaces across locations like Birkenhead, Neston, and Wirral.',
     'tools': ['Figma', 'Adobe Illustrator', 'Adobe Photoshop', 'ChatGPT'],
     'thumbnail': '/projects/wfs-domestic-landing-page.png',
@@ -179,7 +185,7 @@ export const mockProjects: Project[] = [
   {
     'id': '10',
     'title': 'WFS Flooring Solutions Website',
-    'category': 'Website Designs',
+    'category': 'Landing Pages',
     'description': 'WFS Flooring Solutions Website offers a modern platform for commercial flooring services, highlighting expert installation, affordable options, and reliable support across locations like Birkenhead, with a focus on customer satisfaction.',
     'tools': ['Figma', 'Adobe Illustrator', 'Adobe Photoshop', 'ChatGPT'],
     'thumbnail': '/projects/wfs-landing-page.png',
@@ -196,7 +202,7 @@ export const mockProjects: Project[] = [
   {
     'id': '11',
     'title': 'VIP Media Services Website Design',
-    'category': 'Website Designs',
+    'category': 'Landing Pages',
     'description': 'VIP Media Services offers a dynamic website showcasing digital marketing, video editing, scripting, branding, and hosting services, designed to bring visions to life through a creative and user-friendly interface.',
     'tools': ['Figma', 'Adobe Illustrator', 'Adobe Photoshop', 'Play', 'Josefine Sans'],
     'thumbnail': '/projects/vip-service-media.png',
@@ -213,7 +219,7 @@ export const mockProjects: Project[] = [
   {
   'id': '12',
   'title': 'BAM Electric Website Design',
-  'category': 'Website Designs',
+  'category': 'Landing Pages',
   'description': 'BAM Electric is a website designed to showcase electrical and industrial services, focusing on powering industries with precision and innovation, offering construction excellence, automation systems, and maintenance solutions.',
   'tools': ['Figma', 'Adobe Illustrator', 'Adobe Photoshop', 'ChatGPT'],
   'thumbnail': '/projects/bam-electrics.png',
@@ -230,7 +236,7 @@ export const mockProjects: Project[] = [
 {
   'id': '13',
   'title': 'DJS Tech Website Design',
-  'category': 'Website Designs',
+  'category': 'Landing Pages',
   'description': 'DJS Tech is a website designed to empower businesses with comprehensive solutions, showcasing innovation, expertise, and success through a step-by-step process, client testimonials, and industry insights.',
   'tools': ['Figma', 'Adobe Illustrator', 'Adobe Photoshop', 'ChatGPT'],
   'thumbnail': '/projects/djs-technologies.png',

@@ -19,11 +19,12 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({ projects, onProjectClick }) =
   // Extract unique categories from projects
   const allCategories = Array.from(new Set(projects.map(project => project.category)));
   
-  // Filter to show only "Big Projects" category on home page
-  const bigProjects = projects.filter(project => project.category === 'Big Projects');
+  // Filter to show only projects with "Big Projects" parentCategory on home page
+  const bigProjects = projects.filter(project => project.parentCategory === 'Big Projects');
 
-  // Filter and sort projects
+  // Sort projects by ID numerically
   const filteredProjects = bigProjects
+    .sort((a, b) => parseInt(a.id) - parseInt(b.id))
     .sort((a, b) => {
       switch (sortBy) {
         case 'popular':
@@ -32,7 +33,7 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({ projects, onProjectClick }) =
           return b.views - a.views;
         case 'recent':
         default:
-          return new Date(b.date).getTime() - new Date(a.date).getTime();
+          return parseInt(a.id) - parseInt(b.id);
       }
     });
 

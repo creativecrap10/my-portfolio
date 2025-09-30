@@ -109,7 +109,7 @@ const ProjectsPage: React.FC<ProjectsPageProps> = ({ onProjectClick }) => {
                 <div className="text-sm text-gray-600">Clients</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-pink-600 mb-1">3+</div>
+                <div className="text-3xl font-bold text-pink-600 mb-1">5+</div>
                 <div className="text-sm text-gray-600">Years</div>
               </div>
             </div>

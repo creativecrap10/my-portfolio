@@ -189,7 +189,7 @@ const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
             key={index}
             src={image}
             alt={`${project.title} - Image ${index + 1}`}
-            className="w-full rounded-lg object-cover shadow-lg max-h-[600px]"
+            className="w-full rounded-lg object-cover shadow-lg "
           />
         ))
       ) : (

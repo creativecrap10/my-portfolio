@@ -16,13 +16,13 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-blue-400" />
-                <a href="mailto:hello@tomanderson.design" className="hover:text-blue-400 transition-colors">
-                  hello@tomanderson.design
+                <a href="selfdesigner8@gmail.com" className="hover:text-blue-400 transition-colors">
+                  selfdesigner8@gmail.com
                 </a>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-5 w-5 text-blue-400" />
-                <span>San Francisco, CA</span>
+                <span>Chennai, Tamilnadu</span>
               </div>
             </div>
           </div>
@@ -57,7 +57,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400">
-            © {currentYear} Tom Anderson. All rights reserved. Designed with ❤️ in San Francisco.
+            © {currentYear}  CreativeCrap. All rights reserved. Designed by Jones Jebaraj.
           </p>
         </div>
       </div>

@@ -6,7 +6,7 @@ export const mockUser: User = {
   username: 'jonesjebaraj',
   avatar: '/images/profileperson.png',
   bio: 'With 5 years of experience in UI/UX and graphic design',
-  location: 'Sivakasi, India',
+  location: 'Chennai, India',
   website: 'selfdesigner8@gmail.com',
   email: 'selfdesigner8@gmail.com',
   social: {

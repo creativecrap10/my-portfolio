@@ -267,7 +267,7 @@ const AboutPage = () => {
                       <div className="p-2 bg-blue-100 rounded-lg">
                         <MapPin className="h-5 w-5 text-blue-600" />
                       </div>
-                      <span className="text-gray-700 font-medium">Sivakasi, India</span>
+                      <span className="text-gray-700 font-medium">Chennai, India</span>
                     </div>
                     <div className="flex items-center space-x-4 p-3 bg-white rounded-xl shadow-sm">
                       <div className="p-2 bg-blue-100 rounded-lg">

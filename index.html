@@ -1,4 +1,4 @@
-<!doctype html>
+<!--<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,5 +9,269 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Under Maintenance - Jones Jebaraj</title>
+    <style>
+      /* Reset and base styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        overflow: hidden;
+        background: #0a0e27;
+        color: #fff;
+      }
+
+      /* Animated starfield background */
+      .stars {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      }
+
+      .star {
+        position: absolute;
+        background: white;
+        border-radius: 50%;
+        animation: twinkle 3s infinite;
+      }
+
+      @keyframes twinkle {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 1; }
+      }
+
+      /* Gradient overlay */
+      .gradient-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(ellipse at center, rgba(88, 28, 135, 0.3) 0%, rgba(10, 14, 39, 0.8) 70%);
+        pointer-events: none;
+      }
+
+      /* Main container */
+      .container {
+        position: relative;
+        z-index: 10;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+      }
+
+      /* Floating astronaut */
+      .astronaut {
+        font-size: 120px;
+        animation: float 6s ease-in-out infinite;
+        margin-bottom: 30px;
+        filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.5));
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0px) rotate(-5deg); }
+        50% { transform: translateY(-30px) rotate(5deg); }
+      }
+
+      /* Main heading */
+      h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: glow 2s ease-in-out infinite alternate;
+      }
+
+      @keyframes glow {
+        from { filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.5)); }
+        to { filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.8)); }
+      }
+
+      /* Subtitle */
+      .subtitle {
+        font-size: 1.5rem;
+        color: #a0aec0;
+        margin-bottom: 40px;
+        font-weight: 300;
+        letter-spacing: 1px;
+      }
+
+      /* Description */
+      .description {
+        max-width: 600px;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #cbd5e0;
+        margin-bottom: 50px;
+      }
+
+      /* Loading animation */
+      .loading {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+      }
+
+      .dot {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        animation: bounce 1.4s infinite ease-in-out;
+        box-shadow: 0 0 20px rgba(139, 92, 246, 0.6);
+      }
+
+      .dot:nth-child(1) { animation-delay: -0.32s; }
+      .dot:nth-child(2) { animation-delay: -0.16s; }
+
+      @keyframes bounce {
+        0%, 80%, 100% { transform: scale(0); }
+        40% { transform: scale(1); }
+      }
+
+      /* Contact info */
+      .contact {
+        font-size: 1rem;
+        color: #a0aec0;
+        margin-top: 20px;
+      }
+
+      .contact a {
+        color: #667eea;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+
+      .contact a:hover {
+        color: #f093fb;
+      }
+
+      /* Planets decoration */
+      .planet {
+        position: fixed;
+        border-radius: 50%;
+        opacity: 0.6;
+        animation: orbit 20s linear infinite;
+      }
+
+      .planet-1 {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        top: 10%;
+        right: 10%;
+        box-shadow: 0 0 40px rgba(102, 126, 234, 0.5);
+      }
+
+      .planet-2 {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #f093fb, #f5576c);
+        bottom: 15%;
+        left: 8%;
+        animation-duration: 15s;
+        box-shadow: 0 0 40px rgba(240, 147, 251, 0.5);
+      }
+
+      @keyframes orbit {
+        0% { transform: rotate(0deg) translateX(10px) rotate(0deg); }
+        100% { transform: rotate(360deg) translateX(10px) rotate(-360deg); }
+      }
+
+      /* Responsive design */
+      @media (max-width: 768px) {
+        h1 { font-size: 2.5rem; }
+        .subtitle { font-size: 1.2rem; }
+        .description { font-size: 1rem; }
+        .astronaut { font-size: 80px; }
+        .planet-1, .planet-2 { display: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Starfield background -->
+    <div class="stars" id="stars"></div>
+    
+    <!-- Gradient overlay -->
+    <div class="gradient-overlay"></div>
+
+    <!-- Floating planets -->
+    <div class="planet planet-1"></div>
+    <div class="planet planet-2"></div>
+
+    <!-- Main content -->
+    <div class="container">
+      <div class="astronaut">🚀</div>
+      
+      <h1>Under Maintenance</h1>
+      
+      <p class="subtitle">Houston, we're upgrading!</p>
+      
+      <p class="description">
+        Our website is currently undergoing scheduled maintenance to bring you an even better experience. 
+        We're working hard to improve our systems and will be back online shortly.
+      </p>
+
+      <div class="loading">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+
+      <p class="contact">
+        Need to reach us? Contact <a href="mailto:selfdesigner8@gmail.com">selfdesigner8@gmail.com</a>
+      </p>
+    </div>
+
+    <script>
+      // Generate random stars
+      const starsContainer = document.getElementById('stars');
+      const numberOfStars = 150;
+
+      for (let i = 0; i < numberOfStars; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        
+        // Random position
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        
+        // Random size
+        const size = Math.random() * 3;
+        star.style.width = size + 'px';
+        star.style.height = size + 'px';
+        
+        // Random animation delay
+        star.style.animationDelay = Math.random() * 3 + 's';
+        
+        starsContainer.appendChild(star);
+      }
+    </script>
   </body>
 </html>
